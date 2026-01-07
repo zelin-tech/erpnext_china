@@ -11854,3 +11854,5 @@ Allow Request for Quotation with Zero Quantity,允许询价单的数量为零
 Allows users to submit Request for Quotations with zero quantity. Useful when rates are fixed but the quantities are not. Eg. Rate Contracts.,允许用户提交数量为零的询价单。在单价固定但数量不固定时很有用。例如：固定单价合同。
 Allow Purchase Order with Zero Quantity,允许采购订单的数量为零
 Allows users to submit Purchase Orders with zero quantity. Useful when rates are fixed but the quantities are not. Eg. Rate Contracts.,允许用户提交数量为零的采购订单。在单价固定但数量不固定时很有用。例如：固定单价合同。
+View Stock Ledger,查看物料凭证
+View Stock Balance,查看库存余额
