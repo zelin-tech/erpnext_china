@@ -3,8 +3,12 @@
 
 ## 安装
 
+```
+没有设置默认站点的，install-app时请加--site参数
+
 bench get-app erpnext_china https://gitee.com/yuzlin/erpnext_china.git
 bench install-app erpnext_china
+```
 
 
 ## 功能说明
@@ -56,6 +60,12 @@ bench install-app erpnext_china
 1. 修改一词多义字段标签（如采购、销售税费明细中的税率）
 2. 隐藏本地化不适用字段（如PAN号等印度专用字段）
 3. 修改默认系统流水码前缀-改短
+
+## 常见问题
+
+1. 是否与之前的中文汉化与开箱即用冲突
+
+建议卸载中文汉化和开箱即用后再安装这个
 
 #### License
 

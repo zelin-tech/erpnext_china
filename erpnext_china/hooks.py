@@ -19,3 +19,10 @@ override_whitelisted_methods = {
 	"erpnext.accounts.utils.get_coa": "erpnext_china.chart_of_accounts.custom_accounts.custom_account.get_coa",
 	"frappe.desk.treeview.get_all_nodes": "erpnext_china.chart_of_accounts.custom_accounts.custom_account.get_all_nodes",
 }
+
+doc_events = {
+    "Company": {
+ 		"on_update": "erpnext_china.doc_events.company_on_update",
+		"after_insert": "erpnext_china.doc_events.company_after_insert"
+	}
+}
