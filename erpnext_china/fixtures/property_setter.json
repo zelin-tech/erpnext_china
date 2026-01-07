@@ -10,17 +10,6 @@
       "value": "\nAsset\nLiability\nIncome\nExpense\nEquity\nCommon Accounts"
    },
    {
-      "doc_type": "Expense Claim",
-      "doctype": "Property Setter",
-      "doctype_or_field": "DocField",
-      "field_name": "expenses",
-      "modified": "2024-08-27 19:42:46.943779",
-      "name": "Expense Claim-expenses-reqd",      
-      "property": "reqd",
-      "property_type": "Check",
-      "value": 0
-   },
-   {
       "doc_type": "Vehicle",
       "doctype": "Property Setter",
       "doctype_or_field": "DocField",
