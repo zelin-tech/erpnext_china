@@ -5,6 +5,7 @@
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
+ "type": "Workspace",
  "for_user": "",
  "hide_custom": 0,
  "icon": "",
@@ -132,7 +133,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-01-07 10:51:20.320507",
+ "modified": "2026-01-07 10:51:20.320509",
  "modified_by": "fisher@abc.com",
  "module": "ERPNext China",
  "name": "\u4e2d\u56fd\u8d22\u52a1\u62a5\u8868",
