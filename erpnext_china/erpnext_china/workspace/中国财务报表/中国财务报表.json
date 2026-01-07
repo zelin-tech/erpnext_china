@@ -5,7 +5,6 @@
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
- "type": "Workspace",
  "for_user": "",
  "hide_custom": 0,
  "icon": "",
@@ -14,36 +13,6 @@
  "is_hidden": 0,
  "label": "\u4e2d\u56fd\u8d22\u52a1\u62a5\u8868",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Cash Flow Code",
-   "link_count": 0,
-   "link_to": "Cash Flow Code",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Material Move Reason Code",
-   "link_count": 0,
-   "link_to": "Material Move Reason Code",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Cash Flow",
-   "link_count": 0,
-   "link_to": "Cash Flow",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -133,7 +102,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-01-07 10:51:20.320509",
+ "modified": "2026-01-07 21:15:13.939508",
  "modified_by": "fisher@abc.com",
  "module": "ERPNext China",
  "name": "\u4e2d\u56fd\u8d22\u52a1\u62a5\u8868",
