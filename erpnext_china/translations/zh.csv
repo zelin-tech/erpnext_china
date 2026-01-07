@@ -11856,3 +11856,57 @@ Allow Purchase Order with Zero Quantity,允许采购订单的数量为零
 Allows users to submit Purchase Orders with zero quantity. Useful when rates are fixed but the quantities are not. Eg. Rate Contracts.,允许用户提交数量为零的采购订单。在单价固定但数量不固定时很有用。例如：固定单价合同。
 View Stock Ledger,查看物料凭证
 View Stock Balance,查看库存余额
+Purchase Orders Count,采购订单张数
+Average Order Values,订单平均金额
+Auto Created (Reorder),自动创建（重订货）
+Consider for Tax Withholding,启用代扣税
+Item and Pricing,物料与价格
+Tax Template,税费模板
+Route Options,网址跳转参数
+Purchase Tax Withholding Category,采购代扣税类型
+Sales Tax Withholding Category,销售代扣税类型
+WIP Work Orders,在制工单
+Manufactured Items Value,产值
+Allow Editing of Items and Quantities in Work Order,允许修改工单所需物料数量
+"If enabled, the system will allow users to edit the raw materials and their quantities in the Work Order. The system will not reset the quantities as per the BOM, if the user has changed them.","如果启用，系统将允许用户在工单中修改原材料及其数量。如果用户已经进行了更改，系统将不会根据物料清单 (BOM) 重置这些数量。"
+Material Planning,物料计划
+Monthly Total Work Order,每月工单总数
+Monthly Completed Work Order,每月完成工单数
+Ongoing Job Card,在制生产任务单
+Monthly Quality Inspection,每月质检数
+Inward Order,代工
+Outward Order,委外
+Subcontracting Inward and Outward,代工与委外
+Subcontracting Outward Order,委外订单
+Active Subcontracted Items,活跃委外物料
+Subcontracting Inward Order Count,代工订单张数
+Subcontracting Outward Order Count,委外订单张数
+Meaning of Different Permission Types:,各权限类型说明
+Permission,权限
+Audits,审计
+Health Report,系统健康状态报表
+Background Job,后台任务
+"Allows the user to search and see records.","允许用户搜索并查看记录。"
+"The user can select a Customer in Sales Order but cannot open the Customer master.","用户可以在销售订单中选择客户，但无法打开客户主数据。"
+"Allows the user to view the document.","允许用户查看单据。"
+"The user can view Sales Invoices but cannot change them.","用户可以查看销售发票但无法修改。"
+"Allows the user to edit existing records they have access to.","允许用户编辑其有权访问的现有记录。"
+"The user can update a Customer address but cannot create a new Customer.","用户可以更新客户地址，但无法创建新客户。"
+"Allows the user to create new documents.","允许用户创建新单据。"
+"The user can create a new Item but cannot edit existing items.","用户可以创建新物料，但无法编辑现有物料。"
+"Allows the user to delete documents.","允许用户删除单据。"
+"The user can delete submitted documents.","用户可以删除已提交的单据。"
+"Allows printing or PDF download of documents.","允许打印单据或下载 PDF。"
+"The print button is enabled for the user in the document.","单据中的打印按钮对该用户可用。"
+"Allows the user to email from the document.","允许用户通过单据发送邮件。"
+"The email button is enabled for the user in the document.","单据中的邮件按钮对该用户可用。"
+"Allows the user to access reports related to the document.","允许用户访问与该单据相关的报表。"
+"If the user has access to Employee and Report is enabled, they can view Employee-based reports.","如果用户有员工访问权限并启用了报表，则可以查看基于员工的报表。"
+"Allows the user to export data from the Report view.","允许用户从报表视图导出数据。"
+"The user can export report data.","用户可以导出报表数据。"
+"Allows the user to import data into the document.","允许用户将数据导入到单据中。"
+"The user can import data for the document.","用户可以为该单据导入数据。"
+"Allows sharing document access with other users.","允许与其他用户分享单据访问权限。"
+"The user can share document access with another user.","用户可以将单据访问权限分享给其他用户。"
+"Allows users to enable the mask property for any field of the respective doctype.","允许用户为相应单据类型的任何字段启用掩码属性。"
+"If the user enables the mask property for the phone number field, the value will be displayed in a masked format (e.g., 811XXXXXXX).","如果用户为电话号码字段启用了掩码属性，该值将以掩码格式显示（例如：811XXXXXXX）。"
