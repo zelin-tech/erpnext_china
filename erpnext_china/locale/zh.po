@@ -1,0 +1,179 @@
+#. Header text in the Overview Workspace
+#: hrms/hr/workspace/overview/overview.json
+msgid "<span class=\"h4\"><b>Reports &amp; Masters</b></span>"
+msgstr "<span class=\"h4\"><b>报表 &amp; 主数据</b></span>"
+
+#. Header text in the Salary Payout Workspace
+#: hrms/payroll/workspace/salary_payout/salary_payout.json
+msgid "<span class=\"h4\"><b>Transactions &amp; Reports</b></span>"
+msgstr "<span class=\"h4\"><b>交易 &amp; 报表</b></span>"
+
+msgid "Confirm before resetting posting date"
+msgstr "重置记账日期提醒"
+
+msgid "If enabled, user will be alerted before resetting posting date to current date in relevant transactions"
+msgstr "如勾选，重置记账日期为当日会弹出提醒给用户"
+
+msgid "Upon enabling this, the JV will be submitted for a different exchange rate."
+msgstr "勾选后，日记账凭证提交时会使用不同的汇率"
+
+msgid "Set Valuation Rate for Rejected Materials"
+msgstr "设置拒收物料成本价"
+
+msgid "If enabled, the system will generate an accounting entry for materials rejected in the Purchase Receipt."
+msgstr "如勾选，系统会为采购入库中的拒收物料生成会计凭证"
+
+msgid "Fixed Outgoing Email Account"
+msgstr "固定发件箱"
+
+msgid "If set, the system does not use the user's Email or the standard outgoing Email account for sending request for quotations."
+msgstr "如勾选，系统固定邮箱而非当前用户邮箱发出询价单"
+
+msgid "Show Absolute Datetime in Timeline"
+msgstr "单据时间线日志显示完整时间"
+
+msgid "Max signups allowed per hour"
+msgstr "每小时最大允许注册数"
+
+msgid "Allow Consecutive Login Attempts"
+msgstr "允许连续登录尝试次数"
+
+msgid "Max Report Rows"
+msgstr "最大报表行数"
+
+msgid "This value specifies the max number of rows that can be rendered in report view."
+msgstr "报表界面最大允许显示的行数"
+
+msgid "Last Scanned Warehouse"
+msgstr "最后已扫仓库代码"
+
+msgid "Workflow Task"
+msgstr "工作流任务"
+
+msgid "Operating Costs (Per Hour)"
+msgstr "工费成本（每小时）"
+
+msgid "Operating Components Cost"
+msgstr "工费成本"
+
+msgid "Operating Component"
+msgstr "工费成本构成"
+
+msgid "Workstation Operating Component"
+msgstr "工站工费成本构成"
+
+msgid "Component Name"
+msgstr "成本构成"
+
+msgid "Component Expense Account"
+msgstr "成本构成费用科目"
+
+msgid "Serial No and Batch Traceability"
+msgstr "序列号与批号追溯"
+
+msgid "Traceability Direction"
+msgstr "追溯方向"
+
+msgid "Backward"
+msgstr "向后"
+
+msgid "Receipt Items"
+msgstr "采购入库明细"
+
+msgid "Vendor Invoices"
+msgstr "供应商发票明细"
+
+msgid "Vendor Invoice"
+msgstr "供应商发票"
+
+msgid "Landed Cost"
+msgstr "到岸成本"
+
+#. Label of the has_corrective_cost (Check) field in DocType 'Landed Cost Taxes
+#. and Charges'
+#: erpnext/stock/doctype/landed_cost_taxes_and_charges/landed_cost_taxes_and_charges.json
+msgid "Has Corrective Cost"
+msgstr "有返工成本"
+
+#. Label of the claimed_landed_cost_amount (Currency) field in DocType
+#. 'Purchase Invoice'
+#: erpnext/accounts/doctype/purchase_invoice/purchase_invoice.json
+msgid "Claimed Landed Cost Amount (Company Currency)"
+msgstr "已结转到岸成本(公司币)"
+
+msgid "Top Customers"
+msgstr "大客户"
+
+msgid "Item-wise Annual Sales"
+msgstr "年度单品销售额"
+
+msgid "Delivery Trends"
+msgstr "销售出货趋势"
+
+msgid "Oldest Items"
+msgstr "呆滞物料"
+
+msgid "Item Shortage Summary"
+msgstr "缺货清单"
+
+msgid "Material Request Analysis"
+msgstr "物料需求分析"
+
+msgid "Top Suppliers"
+msgstr "核心供应商"
+
+msgid "New Lead (Last 1 Month)"
+msgstr "新线索（上个月）"
+
+msgid "New Opportunity (Last 1 Month)"
+msgstr "新商机（上个月)"
+
+msgid "Won Opportunity (Last 1 Month)"
+msgstr "已转化商机（上个月）"
+
+msgid "Open Opportunity"
+msgstr "在手商机"
+
+msgid "Incoming Leads"
+msgstr "收到的线索"
+
+msgid "Opportunity Trends"
+msgstr "商机趋势"
+
+msgid "Won Opportunities"
+msgstr "已转化商机"
+
+msgid "Territory Wise Opportunity Count"
+msgstr "区域商机数"
+
+msgid "Opportunities via Campaigns"
+msgstr "营销转化的商机"
+
+msgid "Advance Voucher No"
+msgstr "预付单据号"
+
+msgid "Advance Voucher Type"
+msgstr "预付单据类型"
+
+msgid "Show Group Accounts"
+msgstr "显示上层(组)科目"
+
+#: erpnext/accounts/report/general_ledger/general_ledger.js:202
+msgid "Show Credit / Debit in Company Currency"
+msgstr "以本币显示借贷金额"
+
+msgid "API Logging"
+msgstr "API调用日志"
+
+msgid "Log API Requests"
+msgstr "记录API调用日志"
+
+msgid "FG / Semi FG Item"
+msgstr "成品/半成品物料号"
+
+msgid "Is Sub Assembly Item"
+msgstr "是子装配件"
+
+msgid "Is Composite Component"
+msgstr "是子资产"
+

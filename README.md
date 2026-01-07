@@ -1,33 +1,62 @@
-### ERPNext China
+# ERPNext China ERPNext中国本地化
 
-ERPNext China
 
-### Installation
+## 安装
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
-
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
+bench get-app erpnext_china https://gitee.com/yuzlin/erpnext_china.git
 bench install-app erpnext_china
-```
 
-### Contributing
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+## 功能说明
 
-```bash
-cd apps/erpnext_china
-pre-commit install
-```
+### 一、界面中文汉化（简体）
+1. 在系统自带汉化基础上的人工汉化
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+### 二、中国科目表
+1. 系统首次初始化及初始化后创建新公司代码时可选中国会计科目表
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+### 三、创建公司时设置默认值
+1. **税务设置**
+1. 创建税种：
+   - 内销增值税
+   - 外销增值税
+   - 小规模纳税人
+   - 一般纳税人
+2. 创建税率模板：
+   - 13%
+   - 0% 
+   - 1%
 
-### License
+2. **公司设置**
+1. 分配默认科目
+2. 设置仓库库存科目
+3. 配置物料组费用科目
+4. 设置小数精度尾差科目
 
-mit
+### 四、中国财务报表（新增工作区）
+1. **中国资产负债表**
+   - 需设置报表项与科目号对照及计算公式
+   - 自动检查科目遗漏
+
+2. **中国利润表**  
+   - 需设置报表项与科目号对照及计算公式
+   - 自动检查科目遗漏
+
+3. **中国现金流量表（直接法）**
+   - 需预先设置现金流编码
+
+### 五、初始化配置
+
+### 基础设置
+1. 默认语言：中文
+2. 默认地区：中国
+3. 隐藏印度专用字段（如PAN）
+
+### app安装后设置
+1. 修改一词多义字段标签（如采购、销售税费明细中的税率）
+2. 隐藏本地化不适用字段（如PAN号等印度专用字段）
+3. 修改默认系统流水码前缀-改短
+
+#### License
+
+MIT

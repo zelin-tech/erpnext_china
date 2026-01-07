@@ -1,0 +1,12 @@
+tax_category,tax_type,customer_group,item_group,billing_country,shipping_country,priority,tax_template
+P13专票含税,Sales,,,,,1,P13专票含税
+P3专票含税,Sales,,,,,1,P3专票含税
+P13专票未税,Sales,,,,,1,P13专票未税
+P3专票未税,Sales,,,,,1,P3专票未税
+P13专票含税,Purchase,,,,,1,P13专票含税
+P3专票含税,Purchase,,,,,1,P3专票含税
+P1专票含税,Purchase,,,,,1,P1专票含税
+P13专票未税,Purchase,,,,,1,P13专票未税
+P0无税,Purchase,,,,,1,P0无税
+,Sales,,,China,China,99,P13专票含税
+,Purchase,,,China,China,99,P13专票含税
