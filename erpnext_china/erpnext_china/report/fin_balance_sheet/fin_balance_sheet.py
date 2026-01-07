@@ -643,7 +643,7 @@ def get_opening_balances(filters):
   sig = inspect.signature(original_get_opening_balances)
   parameters = sig.parameters
   num_params = len(parameters)
-  if num_params == 2:
+  if num_params >  1:
       return original_get_opening_balances(filters, 0)
   else:
       return original_get_opening_balances(filters)
