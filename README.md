@@ -6,7 +6,7 @@
 ```
 没有设置默认站点的，install-app时请加--site参数
 
-bench get-app erpnext_china https://gitee.com/yuzlin/erpnext_china.git
+bench get-app erpnext_china https://gitee.com/yuzelin/erpnext_china.git
 bench install-app erpnext_china
 ```
 
