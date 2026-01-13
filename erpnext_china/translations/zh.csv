@@ -11923,3 +11923,51 @@ Delete row,删除一行
 Delete {0} rows,删除 {0} 行
 Duplicate {0} rows,复制 {0} 行
 Add multiple,添加多行
+Report Template,报表模板
+Financial Report Template,财务报表模板
+"is enabled","已启用"
+"is disabled","已禁用"
+"{0} is enabled","{0} 已启用"
+"{0} is disabled","{0} 已禁用"
+"{0} equals {1}","{0} 等于 {1}"
+"{0} is not equal to {1}","{0} 不等于 {1}"
+"{0} is one of {1}","{0} 是 {1} 其中的一个"
+"{0} is not one of {1}","{0} 不是 {1} 其中的一个"
+"{0} contains {1}","{0} 包含 {1}"
+"{0} does not contain {1}","{0} 不包含 {1}"
+"{0} is after {1}","{0} 在 {1} 之后"
+"{0} is greater than {1}","{0} 大于 {1}"
+"{0} is before {1}","{0} 在 {1} 之前"
+"{0} is less than {1}","{0} 小于 {1}"
+"{0} is on or after {1}","{0} 在 {1} 当天或之后"
+"{0} is greater than or equal to {1}","{0} 大于或等于 {1}"
+"{0} is on or before {1}","{0} 在 {1} 当天或之前"
+"{0} is less than or equal to {1}","{0} 小于或等于 {1}"
+"{0} is set","{0} 有值"
+"{0} is not set","{0} 是空值"
+"{0} is {1}","{0} 是 {1}"
+"{0} is between {1} and {2}","{0} 介于 {1} 和 {2} 之间"
+"{0} is between {1}","{0} 位于 {1} 范围"
+"{0} is a descendant of {1}","{0} 是 {1} 的子级"
+"{0} is an ancestor of {1}","{0} 是 {1} 的父级"
+"{0} is not a descendant of {1}","{0} 不是 {1} 的子级"
+"{0} is not an ancestor of {1}","{0} 不是 {1} 的父级"
+"{0} is within {1}","{0} 在 {1} 时间段内"
+"Filtered by: {0}.","筛选条件：{0}。"
+Create Saved Filter,创建筛选器
+Consolidated Report,合并报表
+Custom Financial Statement,自定义财务报表
+Customer Ledger,客户台账
+Supplier Ledger,供应商台账
+"Registers","明细表"
+"AR Summary","应收汇总表"
+"AP Summary","应付汇总表"
+"Item-wise Sales Register","按物料销售明细表"
+"Sales Register","销售明细表"
+"Purchase Register","采购明细表"
+Reconcilication Statement,对账单
+Tax Withholding Group,代扣税组
+Deduction Certificate,扣税证明
+Items To Be Received,待入库物料
+Materials To Be Transferred,待发出物料
+Subcontracting Delivery,代工出库
