@@ -10896,6 +10896,7 @@ Fit,自适应
 Transition Properties,状态转换属性
 Workflow Details,工作流详情
 Search or type a command ({0}),搜索或输入命令({0})
+Search or type a command,搜索或输入命令
 Parts Per Hour,每小时产量
 Job Capacity,生产任务单产能
 Workstation Status,工站状态
@@ -11881,7 +11882,7 @@ Subcontracting Outward Order,委外订单
 Active Subcontracted Items,活跃委外物料
 Subcontracting Inward Order Count,代工订单张数
 Subcontracting Outward Order Count,委外订单张数
-Meaning of Different Permission Types:,各权限类型说明
+Meaning of Different Permission Types,各权限类型说明
 Permission,权限
 Audits,审计
 Health Report,系统健康状态报表
@@ -11910,3 +11911,15 @@ Background Job,后台任务
 "The user can share document access with another user.","用户可以将单据访问权限分享给其他用户。"
 "Allows users to enable the mask property for any field of the respective doctype.","允许用户为相应单据类型的任何字段启用掩码属性。"
 "If the user enables the mask property for the phone number field, the value will be displayed in a masked format (e.g., 811XXXXXXX).","如果用户为电话号码字段启用了掩码属性，该值将以掩码格式显示（例如：811XXXXXXX）。"
+to select,选择
+to close,关闭
+Open in new tab,打开浏览器新页签
+Edit Sidebar,编辑侧边栏
+Desktop,桌面
+Reset to Default,恢复默认
+Add row,添加一行
+Duplicate row,复制一行
+Delete row,删除一行
+Delete {0} rows,删除 {0} 行
+Duplicate {0} rows,复制 {0} 行
+Add multiple,添加多行
