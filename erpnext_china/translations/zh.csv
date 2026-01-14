@@ -3215,7 +3215,7 @@ Serial Number: {0} is already referenced in Sales Invoice: {1},序号：{0}已�
 Stock cannot be updated against Purchase Receipt {0},库存不能对采购入库进行更新{0}
 Stock and Account Value Comparison,库存与会计账金额对账
 Raise Material Request when stock reaches re-order level,库存低于重订货点时生成物料需求
-Stock Balance,库存余额(收发存汇总表)
+Stock Balance,库存余额
 Quick Stock Balance,库存余额速查
 Stock Value,库存金额
 Stock Value Difference,库存值变动
@@ -7830,6 +7830,7 @@ Please select Item from Table,请从表中选择物料
 Please set a Supplier against the Items to be considered in the Purchase Order.,请为要创建采购订单的物料设置供应商
 Territory Wise Sales,区域销售额分布
 Total Outgoing Bills,销售总额
+Outgoing Bills,销售总额
 Set From Warehouse,发料仓
 Source Warehouse (Material Transfer),发料仓(调拨)
 The {0} {1} created sucessfully,已创建{0} {1}
@@ -8417,8 +8418,10 @@ Stock Balance Report,库存余额报表
 Total Delivered Amount,总出货金额
 Total Early Exits,总早退
 Total Incoming Bills,采购总额
+Incoming Bills,采购总额
 Total Incoming Payment,收款总额 
 Total Outgoing Payment,付款总额
+Outgoing Payment,付款总额
 Total Received Amount,收到总额
 "Updating {0} of {1}, {2}",上传中 {0} / {1} {2}
 Upload XML Invoices,上传XML格式账单
@@ -10912,8 +10915,8 @@ PDF Page Height (in mm),PDF页高(毫米)
 PDF Page Width (in mm),PDF页宽(毫米)
 Enabled Items Only,在用物料
 Disabled Items Only,禁用物料
-Remove column,移除栏
-Empty column,空栏
+Remove column,移除列
+Empty column,空列
 + Add / Remove Fields,添加/移除字段
 SO Total Qty,销售订单总数量
 Workspace Custom Block,工作区自定义html块
@@ -11627,7 +11630,7 @@ Once opening stocks are updated, you can create transactions like manufacturing 
 "# Check Stock Reports
 Based on the various stock transactions, you can get a host of one-click Stock Reports in ERPNext like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis.","
 # 查看库存报表
-在系统中产生了各种库存业务(物料移动)记录后，即可查看各种库存报表，如物料凭证(库存移动明细)，库存余额(收发存汇总表),又称实时库存，库龄，预期可用库存等"
+在系统中产生了各种库存业务(物料移动)记录后，即可查看各种库存报表，如物料凭证(库存移动明细)，库存余额,又称实时库存，库龄，预期可用库存等"
 Fin Balance Sheet,资产负债表（两栏式）
 Balance Sheet Settings,资产负债表（两栏式）设置
 Balance Sheet Settings Item,资产负债表（两栏式）设置明细
@@ -11962,7 +11965,7 @@ Supplier Ledger,供应商台账
 "Registers","明细表"
 "AR Summary","应收汇总表"
 "AP Summary","应付汇总表"
-"Item-wise Sales Register","按物料销售明细表"
+"Item-wise sales Register","按物料销售明细表"
 "Sales Register","销售明细表"
 "Purchase Register","采购明细表"
 Reconcilication Statement,对账单
@@ -12008,3 +12011,103 @@ Account Category,科目类别
 "Login Activity","登录活动"
 "System Users","系统用户"
 "Website Users","网站用户"
+Roles Allowed to Set and Edit Frozen Account Entries,允许修改已冻结期间凭证的角色
+Accounting entries are frozen up to this date. Only users with the specified role can create or modify entries before this date.,“会计分录已在该日期前冻结。只有拥有指定权限的角色，才能在该日期之前创建或修改分录。”
+Default Sales Contact,默认销售联系人
+Default Stock Valuation Method,默认成本价计算方法
+Docstatus,单据状态
+Reconciliation Statement,对账单
+Session Default Settings,会话默认值
+Download Backups,下载备份
+Average Order Value,平均订单金额
+Sales Invoice (due),销售发票(已到期)
+Non Completed Tasks,未完成任务
+Completed Projects,已完成项目
+Quality Inspections,质检单
+Base Tax Withheld,预扣税基数
+Base Taxable Amount,应税基础金额
+Taxable Date,纳税日期
+Taxable Document Name,纳税单据名称
+Taxable Document Type,纳税单据类型
+Under Withheld Reason,欠缴/少扣原因
+Withholding Date,扣缴日期
+Withholding Document Name,扣缴单据名称
+Withholding Document Type,扣缴单据类型
+Edit Tax Withholding Entries,编辑代扣税明细
+Ignore Tax Withholding Threshold,忽略起征点/起扣点
+Consider for Tax Withholding,纳入税务扣缴范围
+Budget Distribution Total,预算分配总计
+Distribute Equally,平均分配
+Distribution Frequency,分配频率
+Revision Of,修订版次
+Budget Distribution,预算分配
+Payment Reconciliaition,收付款核销
+Hide If Zero,数值为零时隐藏
+Include in Charts,包含在图表中
+Indent Level,缩进级别
+Italic Text,斜体文本
+Line Reference,行参考/行引用
+Reverse Sign,反转符号（正负号反转）
+Value Type,数值类型
+Module (for Export),模块（用于导出）
+Advanced Filtering,高级过滤
+Balance Type,余额类型
+Bold Text,粗体文本
+Display Name,显示名称
+Formula or Account Filter,公式或科目过滤器
+Report Line Items,报表行项目
+Financial Report Row,财务报表行
+Stock Value by Item Group,按物料组货值
+Enable Parallel Reposting,允许后台并发处理
+Stock Reposting Settings,物料成本价追溯调整设置
+Is Phantom BOM,是虚拟物料清单
+Is Phantom Item,是虚拟物料
+Main Item Code,主物料号
+Jan 2025,2025年1月
+Feb 2025,2025年2月
+Mar 2025,2025年3月
+Apr 2025,2025年4月
+May 2025,2025年5月
+Jun 2025,2025年6月
+Jul 2025,2025年7月
+Aug 2025,2025年8月
+Sep 2025,2025年9月
+Oct 2025,2025年10月
+Nov 2025,2025年11月
+Dec 2025,2025年12月
+Jan 2026,2026年1月
+Feb 2026,2026年2月
+Mar 2026,2026年3月
+Apr 2026,2026年4月
+May 2026,2026年5月
+Jun 2026,2026年6月
+Jul 2026,2026年7月
+Aug 2026,2026年8月
+Sep 2026,2026年9月
+Oct 2026,2026年10月
+Nov 2026,2026年11月
+Dec 2026,2026年12月
+Jan 2027,2027年1月
+Feb 2027,2027年2月
+Mar 2027,2027年3月
+Apr 2027,2027年4月
+May 2027,2027年5月
+Jun 2027,2027年6月
+Jul 2027,2027年7月
+Aug 2027,2027年8月
+Sep 2027,2027年9月
+Oct 2027,2027年10月
+Nov 2027,2027年11月
+Dec 2027,2027年12月
+Jan 2028,2028年1月
+Feb 2028,2028年2月
+Mar 2028,2028年3月
+Apr 2028,2028年4月
+May 2028,2028年5月
+Jun 2028,2028年6月
+Jul 2028,2028年7月
+Aug 2028,2028年8月
+Sep 2028,2028年9月
+Oct 2028,2028年10月
+Nov 2028,2028年11月
+Dec 2028,2028年12月
