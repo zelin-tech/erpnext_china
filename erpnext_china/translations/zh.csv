@@ -9883,7 +9883,7 @@ Add Lead to Prospect,线索关联意向客户
 Leads,线索
 Invalid Account,无效科目,
 Row #{0}: Account {1} does not belong to company {2}, 第 {0} 行 ：科目 {1} 不是公司 {3} 的有效科目
-Row {0}: Cost Center {1} does not belong to Company {2}, 第 {0} 行 ：成本中心 {1} 不是公司 {3} 的有效成本中心
+Row {0}: Cost Center {1} does not belong to Company {2}, 第 {0} 行 ：成本中心 {1} 不是公司 {2} 的有效成本中心
 A template with tax category {0} already exists. Only one template is allowed with each tax category, 每个税种只能分派一个税费模板， 税种 {0} 已分派了税费模板
 RQ Job,RQ后台任务
 RQ Worker,RQ后台进程
