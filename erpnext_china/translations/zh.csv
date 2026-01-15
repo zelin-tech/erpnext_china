@@ -12063,6 +12063,7 @@ Stock Reposting Settings,物料成本价追溯调整设置
 Is Phantom BOM,是虚拟物料清单
 Is Phantom Item,是虚拟物料
 Main Item Code,主物料号
+Active Suppliers,有效供应商
 Jan 2025,2025年1月
 Feb 2025,2025年2月
 Mar 2025,2025年3月
@@ -12111,3 +12112,10 @@ Sep 2028,2028年9月
 Oct 2028,2028年10月
 Nov 2028,2028年11月
 Dec 2028,2028年12月
+"Last Edited by {0}","由 {0} 最后编辑"
+"Last Edited by You","由您最后编辑"
+"Created By You","由您创建"
+"Created By {0}","由 {0} 创建"
+"{0} Web page views","{0} 次网页浏览"
+"Repeats {0}","重复 {0}"
+Open Sidebar,打开侧边栏
