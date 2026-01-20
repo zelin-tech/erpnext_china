@@ -92,7 +92,8 @@ class CashFlow(Document):
             'from_date': from_date,
             'to_date': to_date
         })
-        opening_balances = get_rootwise_opening_balances(filters, "Balance Sheet")
+        # ignore_is_opening 会计设置默认勾选，可提升取数性能
+        opening_balances = get_rootwise_opening_balances(filters, "Balance Sheet", 1)
         #filters.from_date = year_start_date
         #yearly_opening_balances = get_rootwise_opening_balances(filters, "Balance Sheet")
         cash_accounts = frappe.get_all("Account", 
