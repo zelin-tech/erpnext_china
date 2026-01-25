@@ -12119,3 +12119,19 @@ Dec 2028,2028年12月
 "{0} Web page views","{0} 次网页浏览"
 "Repeats {0}","重复 {0}"
 Open Sidebar,打开侧边栏
+Row {0} refers to non-existent row {1},第 {0} 行公式配置错误，引用了不存在的行号 {1}
+Row {0}: Account number {1} already in Row {2},行次 {0}：科目编号 {1} 已存在于行次 {2} 中
+Row {0}: Referenced row {1} does not exist,行次 {0}：引用的行号 {1} 不存在
+Row {0}: Referenced row {1} must be a previous row,行次 {0}：引用的行号 {1} 必须是之前的行次
+Row {0}: '{1}' is not a valid row number,行次 {0}：'{1}' 不是有效的行号
+Configuration Warnings,配置警告
+Logic Errors,逻辑错误
+Left Column,左栏
+Right Column,右栏
+{0}Row {1}: Referenced row {2} does not exist,{0}第 {1} 行：引用的行号 {2} 不存在
+{0}Row {1}: Referenced row {2} must be a previous row,{0}第 {1} 行：引用的行号 {2} 必须小于当前行次
+{0}Row {1}: '{2}' is not a valid row number,{0}第 {1} 行：'{2}' 不是有效的行号
+Row {0}: Account {1} already in Row {2},行次 {0}：科目 {1} 已在行次 {2} 中使用。
+Row {0}: '{1}' is not a valid row number,行次 {0}：'{1}' 不是有效的数字。
+{0}Row {1},{0}第 {1} 行
+{0}: Account {1} already in {2},{0}：科目 {1} 已在 {2} 中使用

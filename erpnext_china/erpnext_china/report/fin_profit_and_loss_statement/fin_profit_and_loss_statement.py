@@ -173,6 +173,10 @@ def get_data(data, filters):
       for (i, row_num) in enumerate(d.acc_nums):
         minus_factor = d.minus_factor[i]        
         row = rows_map.get(cstr(row_num))
+        if row is None:
+          # 如果找不到该行，打印一个日志或提示，跳过此数值
+          frappe.throw(_("Row {0} refers to non-existent row {1}").format(d.idx, row_num))
+
         monthly_amount += row.get("amount", 0.0) * minus_factor
         print(i, row_num, monthly_amount)
         month_end_amount += row.get("month_end_amount", 0.0) * minus_factor
@@ -203,7 +207,7 @@ def get_columns(filters):
           "label": "金额",
           "fieldname": "amount",
           "fieldtype": "Currency",
-          "width": 120,
+          "width": 140,
       }
   ]
 
@@ -213,7 +217,7 @@ def get_columns(filters):
             "label": "月底累计数",
             "fieldname": "month_end_amount",
             "fieldtype": "Currency",
-            "width": 120,
+            "width": 140,
         }
     ])
 
