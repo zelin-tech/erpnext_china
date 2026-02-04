@@ -12135,3 +12135,4 @@ Row {0}: Account {1} already in Row {2},行次 {0}：科目 {1} 已在行次 {2}
 Row {0}: '{1}' is not a valid row number,行次 {0}：'{1}' 不是有效的数字。
 {0}Row {1},{0}第 {1} 行
 {0}: Account {1} already in {2},{0}：科目 {1} 已在 {2} 中使用
+Include Returned Invoices (Stand-alone),含独立红字发票
