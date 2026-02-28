@@ -12,6 +12,7 @@ def set_company_default(company):
 
 def set_default_accounts(company_name):
     try:
+        values = {}
         file_path = os.path.join(os.path.dirname(__file__), 'default_accounts.csv')
         with open(file_path, 'r', encoding='utf-8') as in_file:
             data = list(csv.reader(in_file))
