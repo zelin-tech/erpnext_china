@@ -6,6 +6,10 @@ from erpnext.setup.setup_wizard.operations.taxes_setup import from_detailed_data
 def set_company_default(company):    
     set_default_accounts(company)
     setup_tax_template(company)
+
+    # 强制提交数据库事务，确保后面 setup_tax_rule 能查到刚建好的模板
+    frappe.db.commit()
+
     setup_tax_rule(company)
     set_item_group_account(company)
     set_warehouse_account(company)
@@ -68,6 +72,16 @@ def setup_tax_rule(company_name):
         for (tax_category, tax_type, customer_group, item_group, billing_country,
             shipping_country, priority, tax_template) in data:
             template_field_name = 'purchase_tax_template' if tax_type =='Purchase' else 'sales_tax_template'
+
+
+            template_full_name = f'{tax_template} - {abbr}'
+            sales_template_exists = frappe.db.exists('Sales Taxes and Charges Template', template_full_name)
+            purchase_template_exists = frappe.db.exists('Purchase Taxes and Charges Template', template_full_name)
+            if not sales_template_exists and not purchase_template_exists:
+                frappe.logger().debug(f"Tax Rule Skip: Template {template_full_name} not found.")
+                continue
+
+
             tax_rule = frappe.get_doc({
                     'doctype':'Tax Rule',
                     'tax_category': tax_category,
