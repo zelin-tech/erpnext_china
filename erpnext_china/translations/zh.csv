@@ -3909,7 +3909,7 @@ Submit this Work Order for further processing.,提交此生产工单以进行后
 Submitted orders can not be deleted,提交的订单不能被删除
 Submit this document to confirm,点提交按钮进行确认
 submitted this document,提交此单据
-Supply Raw Materials for Purchase,允许委外
+Supply Raw Materials for Purchase,是委外加工件
 Provider Name,提供者名称
 Raised By (Email),提单人（电子邮件）
 Incentives,提成
@@ -6316,7 +6316,7 @@ Please add a subject to your email,请在您的电子邮件中添加主题
 Please setup Instructor Naming System in Education &gt; Education Settings,请在教育培训&gt;教育培训设置中设置讲师号方式
 Start entering data below this line,请在此线下开始输入数据
 Please save your document before adding a new account,请在添加新账户之前保存您的单据
-Following item {0} is not marked as subcontracted item. You can enable them as subcontracted item from its Item master,请在物料主数据中将以下物料{0}设置为允许委外
+Following item {0} is not marked as subcontracted item. You can enable them as subcontracted item from its Item master,请在物料主数据中将以下物料{0}设置为是委外加工件
 Item Code required at Row No {0},请在第{0}行输入物料号
 For row {0}: Enter Planned Qty,请在第{0}行输入计划数量
 Please mention the Lead Name in Lead {0},请在线索{0}中维护线索名
