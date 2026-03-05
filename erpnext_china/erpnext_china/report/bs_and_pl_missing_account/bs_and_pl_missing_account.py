@@ -49,7 +49,8 @@ def get_data(filters):
         for row in account_number_in_report:
             for value in [row.lft_calc_sources, row.rgt_calc_sources]:
                 if value:
-                    for num in value.split(','):            
+                    for num in value.split(','):
+                        num = num.strip().lstrip('-')  
                         account_number_set.add(num)
     else:
         account_number_in_report = frappe.get_all(doctype,
@@ -61,7 +62,8 @@ def get_data(filters):
         for row in account_number_in_report:
             value = row.calc_sources
             if value:
-                for num in value.split(','):            
+                for num in value.split(','):   
+                    num = num.strip().lstrip('-')         
                     account_number_set.add(num)
     group_accts_in_report = [row for row in accounts if row.is_group and row.account_number in account_number_set]
 
