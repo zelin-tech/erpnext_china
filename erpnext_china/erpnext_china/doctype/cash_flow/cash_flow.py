@@ -7,6 +7,7 @@ from frappe.model.document import Document
 from frappe.query_builder.functions import Cast_
 from frappe.utils import cint, cstr, flt, getdate, datetime, get_first_day, get_last_day, formatdate
 from erpnext.accounts.report.trial_balance.trial_balance import get_rootwise_opening_balances
+from frappe.utils import flt
 
 
 class CashFlow(Document):
@@ -59,7 +60,7 @@ class CashFlow(Document):
                 subtotal_by_code_map.setdefault(cash_flow_code, 0)
                 subtotal_by_code_map[cash_flow_code] += (row.debit or 0) - (row.credit or 0)
                 subtotal_by_type_map.setdefault(cash_flow_type, 0)
-                subtotal_by_type_map[cash_flow_type] += row.debit - row.credit
+                subtotal_by_type_map[cash_flow_type] += flt(row.debit) - flt(row.credit)
         last_month_yearly_amount_map = {}
         if self.month != '1':
             cf = frappe.qb.DocType('Cash Flow')
