@@ -3605,7 +3605,7 @@ Success! You are good to go 👍,成功！你很好去👍
 Successful: {0} to {1},成功：{0} {1}
 Team Member,成员
 Member Since,成员自
-Finished product quantity {0} and For Quantity {1} cannot be different,成品数量 {0} 应与待生产数量 {1} 相同
+The finished product {0} quantity {1} and For Quantity {2} cannot be different,物料明细表成品 {0} 数量 {1} 应与表头物料清单信息中的成品数量 {2} 一致
 BOM No. for a Finished Good Item,成品物料清单号
 "Normal resting blood pressure in an adult is approximately 120 mmHg systolic, and 80 mmHg diastolic, abbreviated ""120/80 mmHg""",成年人的正常静息血压约为收缩期120mmHg，舒张压80mmHg，简称为“120 / 80mmHg”
 Cost as on,成本
@@ -9188,8 +9188,8 @@ Production Plan Summary,生产计划汇总报表
 Work Order Tree,生产工单树
 "If enabled, users will be notified every time they login. If not enabled, users will only be notified once.",如勾选，用户每次登录时都弹框通知。否则只弹框通知一次。,
 Go to Notification Settings List,转到通知设置列表
-Sequence Id,工序顺序号,
-Sequence ID,工序顺序号,
+Sequence Id,顺序号,
+Sequence ID,顺序号,
 Base Cost Per Unit,基础单位成本
 Partly Paid,部分付款
 Partly Paid and Discounted,已贴现部分付款
@@ -12137,3 +12137,5 @@ Row {0}: '{1}' is not a valid row number,行次 {0}：'{1}' 不是有效的数�
 {0}: Account {1} already in {2},{0}：科目 {1} 已在 {2} 中使用
 Include Returned Invoices (Stand-alone),含独立红字发票
 Dr,借方
+Physical SFG produced in-house,是内部自制的半成品
+"for subcontract case, ticked means this item excluded from the to-be sent to supplier raw material list",委外场景，勾选后委外发料时不包括此物料
