@@ -4,11 +4,7 @@
 import inspect
 import frappe
 from frappe import _
-from frappe.utils import cint, cstr, flt, getdate, datetime, get_first_day, get_last_day, formatdate
-from erpnext.accounts.report.trial_balance.trial_balance import (
-    get_opening_balances as original_get_opening_balances,
-)
-
+from frappe.utils import cint, cstr, flt, getdate, datetime, get_first_day, get_last_day, formatdate, add_days
 from erpnext.accounts.utils import get_balance_on
 
 def execute(filters):
@@ -86,13 +82,6 @@ class BalanceSheetDoubleColumns():
     else:
       self.filters.from_date = self.year_start_date
       self.filters.to_date = self.year_end_date
-
-
-    # if not filters.from_date:
-    # 	filters.from_date = filters.year_start_date
-
-    # if not filters.to_date:
-    # 	filters.to_date = filters.year_end_date
 
     self.filters.from_date = getdate(self.filters.from_date)
     self.filters.to_date = getdate(self.filters.to_date)
@@ -193,11 +182,7 @@ class BalanceSheetDoubleColumns():
 
     accounts, accounts_by_num, parent_children_map = self.filter_accounts(accounts)
 
-    opening_balances = get_opening_balances(self.filters.copy().update({
-        # 期初为上一年的期末
-        "from_date": self.year_start_date,
-        "to_date": self.year_end_date,
-    }))
+    opening_balances = get_opening_balances(self.filters.company, add_days(self.year_start_date, -1))
 
     for d in accounts:
       # fisher 2025-04-03 外币科目需取本币余额，所以加in_account_currency=False参数
@@ -413,10 +398,7 @@ class BalanceSheetSingleColumn(BalanceSheetDoubleColumns):
         from_date = get_first_day(datetime.date(year=year, month=cint(i + 1), day=1))
       elif i == 12:
         from_date = get_first_day(datetime.date(year=year + 1, month=1, day=1))
-      opening_balances = get_opening_balances(self.filters.copy().update({
-          "from_date": from_date,
-          "to_date": get_last_day(from_date),
-      }))
+      opening_balances = get_opening_balances(self.filters.company, add_days(self.year_start_date, -1))
 
       for d in accounts:
         if d.root_type == 'Asset':
@@ -638,12 +620,38 @@ class BalanceSheetSingleColumn(BalanceSheetDoubleColumns):
 
     return self.columns
 
-def get_opening_balances(filters):
-  #15.5x 升级后加了第二个参数 ignore_is_opening
-  sig = inspect.signature(original_get_opening_balances)
-  parameters = sig.parameters
-  num_params = len(parameters)
-  if num_params >  1:
-      return original_get_opening_balances(filters, 0)
-  else:
-      return original_get_opening_balances(filters)
+def get_opening_balances(company, to_date):
+    """
+    高性能批量获取科目期初借贷。
+    仅返回叶子节点或分录中存在的科目借贷，由后续逻辑统一处理汇总。
+
+    如果启用了多会计准则折旧 多个finance book, 需要剔除主会计准则之外的finance book记录。
+    """
+
+    # 1. 批量从 GL Entry 中一次性查出所有科目的借贷合计
+    precision = frappe.get_precision("GL Entry", "debit") or 2
+    
+    # 直接查询并返回字典格式
+    # 注意：这里按 account (即科目 name) 分组
+    gle_balances = frappe.db.sql(f"""
+        SELECT 
+            account as name, 
+            sum(round(debit, %s)) as opening_debit,
+            sum(round(credit, %s)) as opening_credit
+        FROM `tabGL Entry`
+        WHERE company = %s 
+            AND posting_date <= %s 
+            AND is_cancelled = 0
+        GROUP BY account
+    """, (precision, precision, company, to_date), as_dict=True)
+
+    # 2. 转换为以科目名称为 key 的 Map 格式
+    # 格式示例: {"1001 现金": {"opening_debit": 100.0, "opening_credit": 0.0}, ...}
+    opening_map = {}
+    for g in gle_balances:
+        opening_map[g.name] = frappe._dict({
+            "opening_debit": frappe.utils.flt(g.opening_debit),
+            "opening_credit": frappe.utils.flt(g.opening_credit)
+        })
+
+    return opening_map
