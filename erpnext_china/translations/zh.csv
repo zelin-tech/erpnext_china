@@ -11081,7 +11081,8 @@ Failed to delete {0} documents: {1},未能删除 {0} 个单据: {1}
 Update Outstanding for Self,更新本单未付金额
 "Credit Note will update it's own outstanding amount, even if ""Return Against"" is specified.",即使指定了源单，系统会更新本退款单(而不是源单)未付金额
 "Credit Note will update it's own outstanding amount, even if 'Return Against' is specified.",即使指定'源单'，在本单处理付款与核销,
-"We can see {0} is made against {1}. If you want {1}'s outstanding to be updated, uncheck '{2}' checkbox.  Or you can use {3} tool to reconcile against {1} later.","你基于源单 {1} 创建了  {0} . 如果希望更新 {1} 的未付金额, 取消勾选 '{2}' . <br><br> 或者后续使用 {3} 工具核销 {1} ."
+"We can see {0} is made against {1}. If you want {1}'s outstanding to be updated, uncheck the '{2}' checkbox.","你基于源单 {1} 创建了  {0} . 如果希望更新 {1} 的未付金额, 取消勾选 '{2}' ."
+You can use {0} to reconcile against {1} later.,后续可使用 {0} 工具核销 {1} .
 Currency ,货币
 Amount that has been paid against this advance,本预支已付金额
 Pending (unpaid) amount from previous advances,之前预支未付金额
@@ -12139,3 +12140,39 @@ Include Returned Invoices (Stand-alone),含独立红字发票
 Dr,借方
 Physical SFG produced in-house,是内部自制的半成品
 "for subcontract case, ticked means this item excluded from the to-be sent to supplier raw material list",委外场景，勾选后委外发料时不包括此物料
+Accounts Setup,会计设置
+Sales Taxes,销售税费
+COA Importer,科目表导入工具
+Opening Invoice Tool,发票创建工具
+FX Revaluation,外币重估
+"Analytical Accounting","辅助核算/多维核算"
+"Enable Accounting Dimensions","启用辅助核算"
+"Enable cost center, projects and other custom accounting dimensions","启用成本中心、项目以及其他自定义核算维度"
+"Enable Discounts and Margin","启用折扣与毛利管理"
+"Apply discounts and margins on products","对产品应用折扣与毛利"
+"Payment Options","支付选项"
+"Enable Loyalty Point Program","启用会员积分计划"
+"Role to Notify on Depreciation Failure","资产折旧失败通知角色"
+"Users with this role will be notified if the asset depreciation gets failed","当资产折旧失败时，拥有此角色的用户将收到通知"
+"Default Ageing Range","默认账龄天数区间"
+"Payment Requests made from Sales / Purchase Invoice will be put in Draft explicitly","从销售/采购发票创建的付款申请将显式置为草稿状态"
+"Enable tracking sales commissions","启用销售提成跟踪"
+"Manage sales partner's and sales team's commissions","管理销售合作伙伴及销售团队的提成"
+"Set Incoming Rate as Zero for Expired Batch","过期批次的入库成本价设为零"
+"If enabled, system will set incoming rate as zero for stand-alone credit notes with expired batch item.","如果启用，系统将对包含过期批次物料的独立红字发票（贷记通知单）将入库成本价设为零。"
+"Allow Negative Stock for Batch","允许批次负库存"
+"If enabled, the system will allow negative stock entries for the batch. But, this may lead to incorrect valuation rates, so it is recommended to avoid using this option. The system will permit negative stock only when it is caused by backdated entries and will validate and block negative stock in all other cases.","如果启用，系统将允许该批次出现负库存。但这可能导致计价错误，因此建议避免使用此选项。系统仅在由倒填单据引起的情况下允许负库存，在其他所有情况下都会验证并拦截负库存。"
+"Is customer exempted from sales tax?","该客户是否免征销售税？"
+"Has Operating Cost","包含工费成本"
+"Advance Paid (Company Currency)","已预付金额 (公司本币)"
+"Projected On Hand","预计可用库存"
+"Is IRS 1099 reporting required for supplier?","该供应商是否需要 1099 纳税申报？"
+"Use Posting Datetime for Naming Documents","单据编号可使用记账日期"
+"When checked, the system will use the posting datetime of the document for naming the document instead of the creation datetime of the document.","勾选后，系统将使用单据的记账日期（Posting Datetime）而非创建日期作为单据命名的依据。"
+"Only allow System Managers to upload public files","仅允许系统管理员上传公开文件"
+"If enabled, only System Managers can upload public files. Other users can't see the checkbox Is Private in the upload dialog.","如果启用，只有系统管理员可以上传公开文件。其他用户在上传对话框中将看不到“设为私有”的勾选框。"
+"Disable Product Suggestion","禁用产品建议"
+"Check Availability in Warehouse","仓库(检查可用库存)"
+Reset Desktop Layout,重置桌面布局
+Save Current Filter,保存当前筛选器
+Customize Quick Filters,定制过滤条件

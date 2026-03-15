@@ -7,7 +7,7 @@ import frappe
 
 patches_loaded = False
 
-__version__ = '1.0.7'
+__version__ = '1.0.8'
 
 
 def load_monkey_patches():
