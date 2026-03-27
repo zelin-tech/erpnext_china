@@ -28,7 +28,14 @@ override_whitelisted_methods = {
 
 doc_events = {
     "Company": {
+          "before_insert": "erpnext_china.doc_events.company_before_insert",
  		"on_update": "erpnext_china.doc_events.company_on_update",
 		"after_insert": "erpnext_china.doc_events.company_after_insert"
 	}
+}
+
+jinja = {
+    "methods": [
+        "erpnext_china.print_utils"
+    ]
 }

@@ -1,10 +1,33 @@
 from decimal import Decimal
-import warnings
 import frappe
+from frappe import _, _dict
+from frappe.utils import cstr
 from frappe.utils.data import *
+import json
+import warnings
+
+
+def get_owner_username(doc):
+    return frappe.db.get_value('User', doc.owner, 'full_name')
+
+def get_submit_username(doc):
+    """变更记录data字段数据格式
+    changed:[[其它字段，旧值，新值]
+        ['docstatus', 0, 1]
+    ]"""
+
+    filters={'ref_doctype': doc.doctype, 'docname': doc.name, 'data': ('like', '%docstatus%')}
+    version_list = frappe.get_all('Version', filters = filters, fields=['owner','data'], order_by="creation desc")
+    for version in version_list:
+        data = json.loads(version.data)
+        found = [f for f in data.get('changed') if f[0] =='docstatus' and f[-1] ==1]
+        if found:
+            return frappe.db.get_value('User', version.owner, 'full_name')
+    if doc.docstatus == 1 and doc.modified_by:
+        return frappe.db.get_value('User', doc.modified_by, 'full_name')
 
 # 这个金额转大写的，把它原来的方法贴过来了，就是在中间加了一段，判断如果是中文环境，就调用下面的金额转大写方法
-def money_in_words_zh(number, main_currency = None, fraction_currency=None):
+def money_in_words(number, main_currency = None, fraction_currency=None):
     """
     Returns string in words with currency and fraction currency.
     """
@@ -174,6 +197,3 @@ def cncurrency(value, capital=True, prefix=False, classical=None):
     so.append(prefix)
     so.reverse()
     return ''.join(so)
-
-frappe.utils.data.money_in_words = money_in_words_zh
-frappe.utils.money_in_words = money_in_words_zh
