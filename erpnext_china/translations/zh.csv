@@ -12189,3 +12189,7 @@ Edit Layout,编辑桌面布局
 Removed Icons,已移除的图标
 Icon is not correctly configured please check the workspace sidebar to it,未正确配置工作区侧边栏的图标
 Workspace,工作区
+Inventory Valuation,存货计价
+"To enable the Serial No and Batch No feature, please check the 'Enable Serial / Batch No for Item' checkbox in Stock Settings.","若要启用序列号和批次号功能，请勾选库存设置中的 启用物料序列号/批次号 复选框。"
+Enable Serial / Batch No for Item,启用物料序列号/批次号
+UTM Analytics,获客分析
