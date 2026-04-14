@@ -111,7 +111,5 @@ def check_calculation_row_logic(doc, errors):
                         ref_idx = int(clean_idx_str)
                         if ref_idx not in existing_indices:
                             errors.append(_("{0}Row {1}: Referenced row {2} does not exist").format(side_label, row.idx, ref_idx))
-                        elif ref_idx >= int(row.idx):
-                            errors.append(_("{0}Row {1}: Referenced row {2} must be a previous row").format(side_label, row.idx, ref_idx))
                     except ValueError:
                         errors.append(_("{0}Row {1}: '{2}' is not a valid row number").format(side_label, row.idx, clean_idx_str))
