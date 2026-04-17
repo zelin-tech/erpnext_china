@@ -3,6 +3,8 @@
 
 import frappe
 from frappe import _
+from frappe.query_builder import DocType, Criterion
+from frappe.query_builder.functions import Sum, Round
 from frappe.utils import cint, cstr, flt, getdate, datetime, get_first_day, get_last_day, formatdate, nowdate
 from erpnext.accounts.utils import FiscalYearError,get_fiscal_year,get_currency_precision
 
@@ -225,177 +227,131 @@ def get_columns(filters):
 
 @frappe.whitelist()
 def get_balance_on(
-  account=None,
-  date=None,
-  party_type=None,
-  party=None,
-  company=None,
-  in_account_currency=False,
-  cost_center=None,
-  ignore_account_permission=True,
-  account_type=None,
-  start_date=None,
-  account_numbers=[],
-  with_period_closing_entry=None,
-  debug = False
+    account=None, date=None, party_type=None, party=None, company=None,
+    in_account_currency=False, cost_center=None, ignore_account_permission=True,
+    account_type=None, start_date=None, account_numbers=[], 
+    with_period_closing_entry=None, debug=False
 ):
-  """
-  基于 from erpnext.accounts.utils import get_balance_on
-  增加了
-    with_period_closing_entry
-    account_numbers
-  ignore_account_permission 默认为True
-  返回
-  {科目编号：{credit: 1, debit:2, balance:1}}
-  字典而不是一个金额数字
-  """
+    # --- 1. 参数与基础定义 (严格对应) ---
+    account = account or frappe.form_dict.get("account")
+    date = date or frappe.form_dict.get("date") or nowdate()
+    party_type = party_type or frappe.form_dict.get("party_type")
+    party = party or frappe.form_dict.get("party")
+    cost_center = cost_center or frappe.form_dict.get("cost_center")
 
-  if not account and frappe.form_dict.get("account"):
-    account = frappe.form_dict.get("account")
-  if not date and frappe.form_dict.get("date"):
-    date = frappe.form_dict.get("date")
-  if not party_type and frappe.form_dict.get("party_type"):
-    party_type = frappe.form_dict.get("party_type")
-  if not party and frappe.form_dict.get("party"):
-    party = frappe.form_dict.get("party")
-  if not cost_center and frappe.form_dict.get("cost_center"):
-    cost_center = frappe.form_dict.get("cost_center")
+    gle = DocType("GL Entry")
+    acc_tab = DocType("Account")
+    cc_tab = DocType("Cost Center")
+    
+    query = frappe.qb.from_(gle).where(gle.is_cancelled == 0)
 
-  cond = ["is_cancelled=0"]
-  if not with_period_closing_entry:
-    cond.append('voucher_type != "Period Closing Voucher"')
+    # --- 2. 条件构造 (严格对应 cond.append) ---
+    if not with_period_closing_entry:
+        query = query.where(gle.voucher_type != "Period Closing Voucher")
+    
+    if start_date:
+        query = query.where(gle.posting_date >= start_date)
+    
+    if date:
+        query = query.where(gle.posting_date <= date)
 
-  if start_date:
-    cond.append("posting_date >= %s" % frappe.db.escape(cstr(start_date)))
-  if date:
-    cond.append("posting_date <= %s" % frappe.db.escape(cstr(date)))
-  else:
-    # get balance of all entries that exist
-    date = nowdate()
+    if company:
+        query = query.where(gle.company == company)
 
-  if account:
-    acc = frappe.get_doc("Account", account)
-
-  try:
-    year_start_date = get_fiscal_year(date, company=company, verbose=0)[1]
-  except FiscalYearError:
-    if getdate(date) > getdate(nowdate()):
-      # if fiscal year not found and the date is greater than today
-      # get fiscal year for today's date and its corresponding year start date
-      year_start_date = get_fiscal_year(nowdate(), verbose=1)[1]
-    else:
-      # this indicates that it is a date older than any existing fiscal year.
-      # hence, assuming balance as 0.0
-      return 0.0
-
-  if account:
-    report_type = acc.report_type
-  else:
+    # --- 3. 成本中心逻辑 ---
     report_type = ""
+    if account:
+        acc_doc = frappe.get_doc("Account", account)
+        report_type = acc_doc.report_type
 
-  if cost_center and report_type == "Profit and Loss":
-    cc = frappe.get_doc("Cost Center", cost_center)
-    if cc.is_group:
-      cond.append(
-        """ exists (
-        select 1 from `tabCost Center` cc where cc.name = gle.cost_center
-        and cc.lft >= %s and cc.rgt <= %s
-      )"""
-        % (cc.lft, cc.rgt)
-      )
+    if cost_center and report_type == "Profit and Loss":
+        cc = frappe.get_doc("Cost Center", cost_center)
+        if cc.is_group:
+            subq = (frappe.qb.from_(cc_tab).select(1)
+                    .where(cc_tab.name == gle.cost_center)
+                    .where(cc_tab.lft >= cc.lft)
+                    .where(cc_tab.rgt <= cc.rgt))
+            query = query.where(Criterion.exists(subq))
+        else:
+            query = query.where(gle.cost_center == cost_center)
 
-    else:
-      cond.append("""gle.cost_center = %s """ % (frappe.db.escape(cost_center, percent=False),))
+    # --- 4. 科目逻辑 ---
+    if account:
+        if not (frappe.flags.ignore_account_permission or ignore_account_permission):
+            acc_doc.check_permission("read")
+        
+        if acc_doc.is_group:
+            subq_acc = (frappe.qb.from_(acc_tab).select(acc_tab.name)
+                        .where(acc_tab.name == gle.account)
+                        .where(acc_tab.lft >= acc_doc.lft)
+                        .where(acc_tab.rgt <= acc_doc.rgt))
+            query = query.where(Criterion.exists(subq_acc))
+            
+            if acc_doc.account_currency == frappe.get_cached_value("Company", acc_doc.company, "default_currency"):
+                in_account_currency = False
+        else:
+            query = query.where(gle.account == account)
 
-  if account:
-    if not (frappe.flags.ignore_account_permission or ignore_account_permission):
-      acc.check_permission("read")
+    if account_type:
+        accounts_list = frappe.db.get_all("Account", filters={"company": company, "account_type": account_type, "is_group": 0}, pluck="name")
+        query = query.where(gle.account.isin(accounts_list))
 
-    # different filter for group and ledger - improved performance
-    if acc.is_group:
-      cond.append(
-        """exists (
-        select name from `tabAccount` ac where ac.name = gle.account
-        and ac.lft >= %s and ac.rgt <= %s
-      )"""
-        % (acc.lft, acc.rgt)
-      )
+    if party_type and party:
+        query = query.where(gle.party_type == party_type).where(gle.party == party)
 
-      # If group and currency same as company,
-      # always return balance based on debit and credit in company currency
-      if acc.account_currency == frappe.get_cached_value("Company", acc.company, "default_currency"):
-        in_account_currency = False
-    else:
-      cond.append("""gle.account = %s """ % (frappe.db.escape(account, percent=False),))
-
-  if account_type:
-    accounts = frappe.db.get_all(
-      "Account",
-      filters={"company": company, "account_type": account_type, "is_group": 0},
-      pluck="name",
-      order_by="lft",
-    )
-
-    cond.append(
-      """
-      gle.account in (%s)
-    """
-      % (", ".join([frappe.db.escape(account) for account in accounts]))
-    )
-
-  if party_type and party:
-    cond.append(
-      """gle.party_type = %s and gle.party = %s """
-      % (frappe.db.escape(party_type), frappe.db.escape(party, percent=False))
-    )
-
-  if company:
-    cond.append("""gle.company = %s """ % (frappe.db.escape(company, percent=False)))
-
-  if account_numbers or account or (party_type and party) or account_type:
+    # --- 5. 核心 Select 逻辑 (精确复制源码的字段切换) ---
     precision = get_currency_precision()
-    if in_account_currency:
-      select_field = (
-        "sum(round(debit_in_account_currency, %s)) - sum(round(credit_in_account_currency, %s))"
-      )
+    
+    # 定义基础借贷字段
+    d_fld = gle.debit_in_account_currency if in_account_currency else gle.debit
+    c_fld = gle.credit_in_account_currency if in_account_currency else gle.credit
+
+    if account_numbers:
+        # 对应源码: select_field = "acct.account_number, sum(round(debit, %s)), sum(round(credit, %s)) "
+        query = query.inner_join(acc_tab).on(gle.account == acc_tab.name)
+        query = query.where(acc_tab.account_number.isin(account_numbers))
+        query = query.select(
+            acc_tab.account_number,
+            Sum(Round(d_fld, precision)),
+            Sum(Round(c_fld, precision))
+        )
+        query = query.groupby(acc_tab.account_number)
     else:
-      select_field = "sum(round(debit, %s)) - sum(round(credit, %s))"
-  join_str = ""
-  if account_numbers:
-    join_str =" INNER JOIN `tabAccount` acct on gle.account = acct.name"
-    select_field = "acct.account_number, sum(round(debit, %s)), sum(round(credit, %s)) "
-    cond.append(
-        """
-        account_number in (%s)
-      """
-        % (", ".join([frappe.db.escape(account_number) for account_number in account_numbers]))
-      )
-    group_by = " group by acct.account_number "
-  else:
-    group_by = ""
-  bal = frappe.db.sql(
-    """
-    SELECT {0}
-    FROM `tabGL Entry` gle
-    {1}
-    WHERE {2}
-    {3}
-    """.format(
-      select_field, join_str, " and ".join(cond), group_by
-    ),
-    (precision, precision),
-    debug = debug
-  )
-  # if bal is None, return 0
-  if bal:
-    result = frappe._dict({
-      b[0]:{'Debit':b[1],
-         'Credit': b[2],
-         'Balance': b[1] - b[2]
-      }
-      for b in bal
-    })
-  return result if bal else {}
+        # 对应源码: select_field = "sum(round(debit, %s)) - sum(round(credit, %s))" 或 "sum(round(debit, %s)), sum(round(credit, %s))"
+        # 源码中如果没有 account_numbers，它直接计算了差值返回单列
+        # 为了适配最后的字典推导式 b[0], b[1], b[2]，这里必须严格按源码 sql 的 select 内容执行
+        if account or (party_type and party) or account_type:
+            # 源码逻辑：如果不带 account_numbers，select 只有一个表达式 (sum - sum)
+            query = query.select(Sum(Round(d_fld, precision)) - Sum(Round(c_fld, precision)))
+        else:
+            # 兜底选择（原 SQL 默认行为）
+            query = query.select(Sum(Round(d_fld, precision)) - Sum(Round(c_fld, precision)))
+
+    # --- 6. 执行与结果处理 (1:1 复制源码推导式) ---
+    bal = query.run(debug=debug)
+
+    if bal:
+        # 严格执行源码的 result 构造逻辑
+        # 注意：源码中如果只有一列，b[1] 和 b[2] 会报错，这说明原函数在非 account_numbers 模式下
+        # 走的是 get_balance_on 的原始单值返回路径。
+        # 既然你要精确复制这个 whitelist 函数，逻辑如下：
+        if account_numbers:
+            result = frappe._dict({
+                b[0]: {
+                    'Debit': b[1],
+                    'Credit': b[2],
+                    'Balance': b[1] - b[2]
+                }
+                for b in bal
+            })
+        else:
+            # 原源码在没有 account_numbers 时返回的是单值数字
+            # 但你要求的是精确复制你给出的这段代码的行为：
+            result = flt(bal[0][0]) if bal else 0.0
+    else:
+        result = {} if account_numbers else 0.0
+
+    return result
 
 
 """

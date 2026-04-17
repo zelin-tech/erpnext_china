@@ -4,6 +4,8 @@
 import inspect
 import frappe
 from frappe import _
+from frappe.query_builder import DocType, Order
+from frappe.query_builder.functions import Sum, Round
 from frappe.utils import cint, cstr, flt, getdate, datetime, get_first_day, get_last_day, formatdate, add_days
 from erpnext.accounts.utils import get_balance_on
 
@@ -12,6 +14,37 @@ def execute(filters):
     return BalanceSheetSingleColumn(filters).run()
   else:
     return BalanceSheetDoubleColumns(filters).run()
+
+def get_accounts_data(company, root_types=None):
+    """
+    共用获取科目方法
+    :param root_types: 列表类型，例如 ['Asset', 'Liability', 'Equity']。如果为 None 则查全部。
+    """
+    acc = DocType("Account")
+    parent = DocType("Account").as_("parent")
+
+    query = (
+        frappe.qb.from_(acc)
+        .left_join(parent).on(parent.name == acc.parent_account)
+        .select(
+            acc.name,
+            acc.account_number,
+            parent.account_number.as_("parent_number"),
+            acc.parent_account,
+            acc.account_name,
+            acc.root_type,
+            acc.report_type,
+            acc.lft,
+            acc.rgt
+        )
+        .where(acc.company == company)
+    )
+
+    # 动态添加过滤条件
+    if root_types:
+        query = query.where(acc.root_type.isin(root_types))
+
+    return query.orderby(acc.lft).run(as_dict=True)
 
 class BalanceSheetDoubleColumns():
   def __init__(self, filters=None):
@@ -167,16 +200,8 @@ class BalanceSheetDoubleColumns():
 
 
   def get_data(self):
-    accounts = frappe.db.sql(
-        """select acc.name, acc.account_number, parent.account_number as parent_number,
-      acc.parent_account, acc.account_name,
-      acc.root_type, acc.report_type, acc.lft, acc.rgt
-      from `tabAccount` acc
-      left join `tabAccount` parent on parent.name = acc.parent_account
-      where acc.company=%s  order by acc.lft""", #fisher and acc.root_type in ('Asset', 'Liability', 'Equity'), 要考虑未结转损益
-        self.company,
-        as_dict=True,
-    )
+    accounts = get_accounts_data(self.company)
+
     if not accounts:
       return None
 
@@ -374,16 +399,7 @@ class BalanceSheetSingleColumn(BalanceSheetDoubleColumns):
 
 
   def get_data(self):
-    accounts = frappe.db.sql(
-        """select acc.name, acc.account_number, parent.account_number as parent_number,
-      acc.parent_account, acc.account_name,
-      acc.root_type, acc.report_type, acc.lft, acc.rgt
-      from `tabAccount` acc
-      left join `tabAccount` parent on parent.name = acc.parent_account
-      where acc.company=%s and acc.root_type in ('Asset', 'Liability', 'Equity') order by acc.lft""",
-        self.company,
-        as_dict=True,
-    )
+    accounts = get_accounts_data(self.company, root_types=['Asset', 'Liability', 'Equity'])
     if not accounts:
       return None
 
@@ -633,17 +649,21 @@ def get_opening_balances(company, to_date):
     
     # 直接查询并返回字典格式
     # 注意：这里按 account (即科目 name) 分组
-    gle_balances = frappe.db.sql(f"""
-        SELECT 
-            account as name, 
-            sum(round(debit, %s)) as opening_debit,
-            sum(round(credit, %s)) as opening_credit
-        FROM `tabGL Entry`
-        WHERE company = %s 
-            AND posting_date <= %s 
-            AND is_cancelled = 0
-        GROUP BY account
-    """, (precision, precision, company, to_date), as_dict=True)
+    gle = DocType("GL Entry")
+    
+    query = (
+        frappe.qb.from_(gle)
+        .select(
+            gle.account.as_("name"),
+            Sum(Round(gle.debit, precision)).as_("opening_debit"),
+            Sum(Round(gle.credit, precision)).as_("opening_credit")
+        )
+        .where(gle.company == company)
+        .where(gle.posting_date <= to_date)
+        .where(gle.is_cancelled == 0)
+        .groupby(gle.account)
+    )    
+    gle_balances = query.run(as_dict=True)
 
     # 2. 转换为以科目名称为 key 的 Map 格式
     # 格式示例: {"1001 现金": {"opening_debit": 100.0, "opening_credit": 0.0}, ...}

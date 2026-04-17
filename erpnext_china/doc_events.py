@@ -14,11 +14,7 @@ def company_after_insert(doc, method):
     doc.erpnext_china_in_insert = True    
 
 def company_on_update(doc, method):
-    if not frappe.db.sql(
-        """select name from tabAccount
-            where company=%s and docstatus<2 limit 1""",
-        doc.name,
-    ):
+    if not frappe.db.exists("Account", {"company": doc.name, "docstatus": ("<", 2)}):
         frappe.flags.country_change = True
         frappe.local.flags.ignore_root_company_validation = True
         frappe.local.flags.ignore_chart_of_accounts = 1
