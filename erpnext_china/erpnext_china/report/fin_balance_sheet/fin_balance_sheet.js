@@ -48,10 +48,11 @@ frappe.query_reports["Fin Balance Sheet"] = {
 			return value;
 		}
 
-		// 将所有负数变为正数，并且为货币格式
+		
 		if (column.fieldname.endsWith('_balance')) {
 			if (data[column.fieldname] < 0) {
-				value = Math.abs(data[column.fieldname]);
+				// 这里不应该强行变成正数显示，会误导 20260428
+				// value = Math.abs(data[column.fieldname]);
 				value = format_currency(value, data.currency);
 				// 右对齐
 				column.align = 'right';
