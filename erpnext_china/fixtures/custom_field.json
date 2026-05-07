@@ -1,0 +1,45 @@
+[
+   {
+    "doctype": "Custom Field",
+    "dt": "Account",
+    "fieldname": "cash_flow_code",
+    "fieldtype": "Link",
+    "options":"Cash Flow Code",
+    "insert_after": "balance_must_be",
+    "label": "Default Cash Flow Code",
+    "modified": "2023-12-10 22:15:02.049023",
+    "name": "Account-cash_flow_code"
+   },
+   {
+      "doctype": "Custom Field",
+      "dt": "Account",
+      "fieldname": "allow_all_party_type",
+      "fieldtype": "Check",
+      "insert_after": "cash_flow_code",
+      "label": "Allow All Party Type",
+      "modified": "2025-01-14 22:15:02.049023",
+      "name": "Account-allow_all_party_type"
+   },
+   {
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "cash_flow_code",
+    "fieldtype": "Link",
+    "options":"Cash Flow Code",
+    "insert_after": "default_bank_account",
+    "label": "Default Cash Flow Code",
+    "modified": "2023-12-16 22:15:02.049023",
+    "name": "Customer-cash_flow_code"
+   },
+   {
+    "doctype": "Custom Field",
+    "dt": "Supplier",
+    "fieldname": "cash_flow_code",
+    "fieldtype": "Link",
+    "options":"Cash Flow Code",
+    "insert_after": "default_bank_account",
+    "label": "Default Cash Flow Code",
+    "modified": "2023-12-16 22:15:02.049023",
+    "name": "Supplier-cash_flow_code"
+   }
+]

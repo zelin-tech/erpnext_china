@@ -1,0 +1,481 @@
+{
+    "tax_categories": [
+        "P13专票含税",
+        "P3专票含税",
+        "P1专票含税",
+        "P13专票未税",
+        "P3专票未税",
+        "P1专票未税",
+        "P0无税"
+    ],
+    "chart_of_accounts": {
+        "小企业会计准则": {
+            "sales_tax_templates": [
+                {
+                    "title": "P13专票含税",
+                    "tax_category": "P13专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票含税",
+                    "tax_category": "P3专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票未税",
+                    "tax_category": "P13专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票未税",
+                    "tax_category": "P3专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P0无税",
+                    "tax_category": "P0无税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 0
+                            }
+                        }
+                    ]
+                }                
+            ],
+            "purchase_tax_templates": [
+                {
+                    "title": "P1专票含税",
+                    "tax_category": "P1专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-进项税额",
+                                "account_number":"22210101",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票含税",
+                    "tax_category": "P3专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-进项税额",
+                                "account_number":"22210101",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票含税",
+                    "tax_category": "P13专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-进项税额",
+                                "account_number":"22210101",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票未税",
+                    "tax_category": "P13专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-进项税额",
+                                "account_number":"22210101",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P0无税",
+                    "tax_category": "P0无税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"应交税费-应交增值税-进项税额",
+                                "account_number":"22210101",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "小企业会计准则(2024)": {
+            "sales_tax_templates": [
+                {
+                    "title": "P13专票含税",
+                    "tax_category": "P13专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"销项税额",
+                                "account_number":"222105",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票含税",
+                    "tax_category": "P3专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"销项税额",
+                                "account_number":"2221005",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票未税",
+                    "tax_category": "P13专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"销项税额",
+                                "account_number":"22210005",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票未税",
+                    "tax_category": "P3专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"销项税额",
+                                "account_number":"2221005",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P0无税",
+                    "tax_category": "P0无税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"销项税额",
+                                "account_number":"2221005",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 0
+                            }
+                        }
+                    ]
+                }                
+            ],
+            "purchase_tax_templates": [
+                {
+                    "title": "P1专票含税",
+                    "tax_category": "P1专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"进项税额",
+                                "account_number":"2221001",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票含税",
+                    "tax_category": "P3专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"进项税额",
+                                "account_number":"2221001",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票含税",
+                    "tax_category": "P13专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"进项税额",
+                                "account_number":"2221001",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票未税",
+                    "tax_category": "P13专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"进项税额",
+                                "account_number":"2221001",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P0无税",
+                    "tax_category": "P0无税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"进项税额",
+                                "account_number":"2221001",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "一般企业会计准则(2024)": {
+            "sales_tax_templates": [
+                {
+                    "title": "P13专票含税",
+                    "tax_category": "P13专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待转销项税额",
+                                "account_number":"22210210",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票含税",
+                    "tax_category": "P3专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待转销项税额",
+                                "account_number":"22210210",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票未税",
+                    "tax_category": "P13专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待转销项税额",
+                                "account_number":"22210210",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票未税",
+                    "tax_category": "P3专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待转销项税额",
+                                "account_number":"22210210",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P0无税",
+                    "tax_category": "P0无税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待转销项税额",
+                                "account_number":"22210210",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 0
+                            }
+                        }
+                    ]
+                }                
+            ],
+            "purchase_tax_templates": [
+                {
+                    "title": "P1专票含税",
+                    "tax_category": "P1专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待抵扣进项税额",
+                                "account_number":"22210190",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P3专票含税",
+                    "tax_category": "P3专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待抵扣进项税额",
+                                "account_number":"22210190",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票含税",
+                    "tax_category": "P13专票含税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待抵扣进项税额",
+                                "account_number":"22210190",
+                                "included_in_print_rate": 1,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P13专票未税",
+                    "tax_category": "P13专票未税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待抵扣进项税额",
+                                "account_number":"22210190",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 13
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "P0无税",
+                    "tax_category": "P0无税",
+                    "is_default": 0,
+                    "taxes": [
+                        {
+                            "account_head": {
+                                "account_name":"待抵扣进项税额",
+                                "account_number":"22210190",
+                                "included_in_print_rate": 0,
+                                "tax_rate": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,493 @@
+[
+   {
+      "doc_type": "Account",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "root_type",
+      "modified": "2025-08-17 19:42:47.535662",
+      "name": "Account-root_type_options",
+      "property": "options",
+      "value": "\nAsset\nLiability\nIncome\nExpense\nEquity\nCommon Accounts"
+   },
+   {
+      "doc_type": "Vehicle",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "make",
+      "modified": "2022-02-01 19:42:46.943779",
+      "name": "Vihicle-make-label",
+      "property": "label",
+      "value": "Vihicle Maker"
+   },     
+   {
+      "doc_type": "Contact Phone",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "phone",
+      "modified": "2022-02-01 19:42:46.943779",
+      "name": "Contact Phone-phone-label",
+      "property": "label",
+      "value": "Phone Number"
+   },  
+    {
+       "doc_type": "ToDo",
+       "doctype": "Property Setter",
+       "doctype_or_field": "DocField",
+       "field_name": "owner",
+       "modified": "2022-02-01 19:42:46.943779",
+       "name": "ToDo-owner-label",
+       "property": "label",
+       "value": "Completed By"
+    },
+    {
+       "doc_type": "Quality Meeting Minutes",
+       "doctype": "Property Setter",
+       "doctype_or_field": "DocField",
+       "field_name": "minute",
+       "modified": "2021-10-27 19:42:46.943779",
+       "name": "Quality Meeting Minutes-minute-label",
+       "property": "label",
+       "value": "Minutes"
+    },
+    {
+      "doc_type": "Account",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "tax_rate",
+      "modified": "2021-10-27 19:42:46.943779",
+      "name": "Account-tax_rate-label",
+      "property": "label",
+      "value": "Tax Rate"
+   },      
+    {
+     "doc_type": "Sales Taxes and Charges",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "rate",
+     "modified": "2021-08-07 19:42:46.943779",
+     "name": "Sales Taxes and Charges-rate-label",
+     "property": "label",
+     "value": "Tax Rate"
+    },
+    {
+     "doc_type": "Purchase Taxes and Charges",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "rate",
+     "modified": "2021-08-07 19:42:46.977888",
+     "name": "Purchase Taxes and Charges-rate-label",
+     "property": "label",
+     "value": "Tax Rate"
+    },
+    {
+     "doc_type": "Advance Taxes and Charges",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "rate",
+     "modified": "2021-08-07 19:42:47.005043",
+     "name": "Advance Taxes and Charges-rate-label",
+     "property": "label",
+     "value": "Tax Rate"
+    },
+    {
+     "doc_type": "Task",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "task_weight",
+     "modified": "2021-08-07 19:42:47.029981",
+     "name": "Task-weight-label",
+     "property": "label",
+     "value": "Weightage"
+    },
+    {
+     "doc_type": "Task Type",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "weight",
+     "modified": "2022-02-01 19:42:47.029981",
+     "name": "Task-Type-weight-label",
+     "property": "label",
+     "value": "Weightage"
+    },
+    {
+     "doc_type": "Project",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "margin",
+     "modified": "2022-02-01 19:42:47.029981",
+     "name": "Project-margin-label",
+     "property": "label",
+     "value": "Gross Margin"
+    },
+    {
+     "doc_type": "Purchase Invoice Item",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "manufacture_details",
+     "modified": "2021-08-07 19:42:47.054384",
+     "name": "Purchase Invoice Item-manufacture_details-label",
+     "property": "label",
+     "value": "Manufacturing"
+    },
+    {
+     "doc_type": "Purchase Order Item",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "manufacture_details",
+     "modified": "2021-08-07 19:42:47.079343",
+     "name": "Purchase Order Item-manufacture_details-label",
+     "property": "label",
+     "value": "Manufacturing"
+    },
+    {
+     "default_value": null,
+     "doc_type": "Supplier Quotation Item",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "manufacture_details",
+     "modified": "2021-08-07 19:42:47.103802",
+     "name": "Supplier Quotation Item-manufacture_details-label",
+     "property": "label",
+     "value": "Manufacturing"
+    },
+    {
+     "doc_type": "Material Request Item",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "manufacture_details",
+     "modified": "2021-08-07 19:42:47.128046",
+     "name": "Material Request Item-manufacture_details-label",
+     "property": "label",
+     "value": "Manufacturing"
+    },
+    {
+     "doc_type": "Purchase Receipt Item",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "manufacture_details",
+     "modified": "2021-08-07 19:42:47.153034",
+     "name": "Purchase Receipt Item-manufacture_details-label",
+     "property": "label",
+     "value": "Manufacturing"
+    },
+    {
+     "doc_type": "Bank Account",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "account_name",
+     "modified": "2021-08-07 19:42:47.177693",
+     "name": "Bank Account-account_name-label",
+     "property": "label",
+     "value": "Bank Account Name"
+    },
+    {
+     "doc_type": "Bank Account",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "account_type",
+     "modified": "2021-08-07 19:42:47.202452",
+     "name": "Bank Account-account_type-label",
+     "property": "label",
+     "value": "Bank Account Type"
+    },
+    {
+     "doc_type": "Bank Account",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "account_subtype",
+     "modified": "2021-08-07 19:42:47.226413",
+     "name": "Bank Account-account_subtype-label",
+     "property": "label",
+     "value": "Bank Account Subtype"
+    },
+    {
+     "doc_type": "DocPerm",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "select",
+     "modified": "2021-08-07 19:42:47.250230",
+     "name": "DocPerm-select-label",
+     "property": "label",
+     "value": "SELECT"
+    },
+    {
+      "doc_type": "DocPerm",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "permlevel",
+      "modified": "2022-01-08 19:42:47.250230",
+      "name": "DocPerm-permlevel-label",
+      "property": "label",
+      "value": "Perm Level"
+     },
+    {
+      "doc_type": "Item Customer Detail",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "ref_code",
+      "modified": "2021-08-07 19:42:47.250230",
+      "name": "Item Customer Detail-ref_code-label",
+      "property": "label",
+      "value": "Customer Part Number"
+     },
+    {
+     "doc_type": "Sales Order",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "set_warehouse",
+     "modified": "2021-08-07 19:42:47.274986",
+     "name": "Sales Order-set_warehouse-label",
+     "property": "label",
+     "value": "Delivery Warehouse"
+    },
+    {
+     "doc_type": "Supplier",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "pan",
+     "modified": "2021-08-07 19:42:47.298343",
+     "name": "Supplier-pan-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "Customer",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "pan",
+     "modified": "2021-08-07 19:42:47.321681",
+     "name": "Customer-pan-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "Purchase Order",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "subscription_section",
+     "modified": "2021-08-07 19:42:47.392636",
+     "name": "Purchase Order-subscription_section-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "Contact",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "middle_name",
+     "modified": "2021-08-07 19:42:47.416368",
+     "name": "Contact-middle_name-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "User",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "middle_name",
+     "modified": "2021-08-07 19:42:47.464339",
+     "name": "User-middle_name-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "User",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "last_name",
+     "modified": "2021-08-07 19:42:47.488049",
+     "name": "User-last_name-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "User",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "full_name",
+     "modified": "2021-08-07 19:42:47.511779",
+     "name": "User-full_name-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+    {
+     "doc_type": "Contact",
+     "doctype": "Property Setter",
+     "doctype_or_field": "DocField",
+     "field_name": "last_name",
+     "modified": "2021-08-07 19:42:47.535662",
+     "name": "Contact-last_name-hidden",
+     "property": "hidden",
+     "value": "1"
+    },
+     {
+      "doc_type": "Asset Movement",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "purpose",
+      "modified": "2022-01-22 19:42:47.535662",
+      "name": "Asset Movement-purpose-in_list_view",
+      "property": "in_list_view",
+      "value": "1"
+     },
+     {
+      "doc_type": "Asset Movement",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "purpose",
+      "modified": "2022-01-22 19:42:47.535662",
+      "name": "Asset Movement-purpose_in_standard_filter",
+      "property": "in_standard_filter",
+      "value": "1"
+     }, 
+    {
+      "doc_type": "Opportunity",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "opportunity_type",
+      "modified": "2022-03-10 19:42:47.535662",
+      "name": "Opportunity-opportunity_type",
+      "property": "default",
+      "value": "销售"
+     },
+     {
+      "doc_type": "Opportunity",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "sales_stage",
+      "modified": "2022-03-10 19:42:47.535662",
+      "name": "Opportunity-sales_stage",
+      "property": "default",
+      "value": "有意向"
+     },
+     {
+      "doc_type": "Company",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "default_currency",
+      "modified": "2022-12-26 19:42:47.535662",
+      "name": "Company-default_currency",
+      "property": "default",
+      "value": "CNY"
+     },
+     {
+      "doc_type": "Workstation",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "production_capacity",
+      "modified": "2023-05-02 19:42:47.535662",
+      "name": "Workstation-description_production_capacity",
+      "property": "description",
+      "value": "for equipment pool case, number of individual equipment"
+     },
+     {
+      "doc_type": "BOM Operation",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "sequence_id",
+      "modified": "2023-05-02 19:42:47.535662",
+      "name": "BOM Operation-description_sequence_id",
+      "property": "description",
+      "value": "for same sequence ID operations, no preceeding operation to be finished validation check"
+     },
+     {
+      "doc_type": "BOM Item",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "do_not_explode",
+      "modified": "2023-05-02 19:42:47.535662",
+      "name": "BOM Operation-description_do_not_explode",
+      "property": "description",
+      "value": "Physical SFG produced in-house"
+     },
+     {
+      "doc_type": "BOM Item",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "sourced_by_supplier",
+      "modified": "2023-05-02 19:42:47.535662",
+      "name": "BOM Operation-description_sourced_by_supplier",
+      "property": "description",
+      "value": "for subcontract case, ticked means this item excluded from the to-be sent to supplier raw material list"
+     },
+     {
+      "doc_type": "Item",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "include_item_in_manufacturing",
+      "modified": "2023-05-03 19:42:47.535662",
+      "name": "Item-description_sourced_by_supplier",
+      "property": "description",
+      "value": "if not checked, it will be excluded from send to manufacture,manual transfer it to WIP warehouse without refer to work order instead"
+     },
+     {
+      "doc_type": "BOM Item",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "include_item_in_manufacturing",
+      "modified": "2023-05-03 19:42:47.535662",
+      "name": "BOM Item-description_sourced_by_supplier",
+      "property": "description",
+      "value": "if not checked, it will be excluded from send to manufacture,manual transfer it to WIP warehouse without refer to work order instead"
+     },
+     {
+      "doc_type": "Work Order Item",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "include_item_in_manufacturing",
+      "modified": "2023-05-03 19:42:47.535662",
+      "name": "Work Order Item-description_sourced_by_supplier",
+      "property": "description",
+      "value": "if not checked, it will be excluded from send to manufacture,manual transfer it to WIP warehouse without refer to work order instead"
+     },
+     {
+      "doc_type": "Account",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "root_type",
+      "modified": "2023-08-22 19:42:47.535662",
+      "name": "Account-root_type_options",
+      "property": "options",
+      "value": "\nAsset\nLiability\nIncome\nExpense\nEquity\nCommon Accounts"
+     },
+     {
+      "doc_type": "Role Profile",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "role_profile",
+      "modified": "2023-09-10 19:42:46.943779",
+      "name": "Role Profile-role_profile-label",
+      "property": "label",
+      "value": "Role Profile"
+     },
+     {
+      "doc_type": "Customer",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "customer_name",
+      "modified": "2023-12-31 19:42:46.943779",
+      "name": "Customer-customer_name-no_copy",
+      "property": "no_copy",
+      "value": 0
+     },
+     {
+      "doc_type": "Supplier",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "supplier_name",
+      "modified": "2023-12-31 19:42:46.943779",
+      "name": "Customer-supplier_name-no_copy",
+      "property": "no_copy",
+      "value": 0
+     },
+     {
+      "doc_type": "Bank Reconciliation Tool",
+      "doctype": "Property Setter",
+      "doctype_or_field": "DocField",
+      "field_name": "bank_statement_closing_balance",
+      "modified": "2025-05-17 19:42:46.943780",
+      "name": "Bank Reconciliation Tool-bank_statement_closing_balance-label",
+      "property": "label",
+      "value": "Closing Balance as per Bank Statement"
+     }
+]

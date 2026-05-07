@@ -1,0 +1,36 @@
+Sales Order,naming_series,options,SO-.YY.-
+Purchase Order,naming_series,options,PO-.YY.-
+Sales Invoice,naming_series,options,SI-.YY.-
+Purchase Invoice,naming_series,options,PI-.YY.-
+Delivery Note,naming_series,options,DN-.YY.-
+Purchase Receipt,naming_series,options,PR-.YY.-
+Stock Entry,naming_series,options,SE-.YY.-
+Journal Entry,naming_series,options,JE-.YY.-
+Work Order,naming_series,options,WO-.YY.-
+Pick List,naming_series,options,PL-.YY.-
+Quality Inspection,naming_series,options,QI-.YY.-
+Production Plan,naming_series,options,PP-.YY.-
+Material Request,naming_series,options,MR-.YY.-
+Stock Reconciliation,naming_series,options,SRE-.YY.-
+Payment Entry,naming_series,options,PE-.YY.-
+Payment Request,naming_series,options,PYR-.YY.-
+Job Card,naming_series,options,JC-.YY.-
+Job Card,naming_series,default,JC-.YY.-
+GL Entry,naming_series,options,GLE-.YY.-
+Stock Ledger Entry,naming_series,options,SLE-.YY.-
+Task,naming_series,options,TK-.YY.-
+Landed Cost Voucher,naming_series,options,LCV-.YY.-
+Period Closing Voucher,naming_series,options,PCV-.YY.-
+Supplier Quotation,naming_series,options,SQ-.YY.-
+Quotation,naming_series,options,QUO-.YY.-
+Blanket Order,naming_series,options,BLO-.YY.-
+Asset,naming_series,options,AST-.YY.-
+Asset Repair,naming_series,options,ASR-.YY.-
+Asset Movement,naming_series,options,ASM-.YY.-
+Subcontracting Order,naming_series,options,SCO-.YY.-
+Subcontracting Receipt,naming_series,options,SCR-.YY.-
+Packing Slip,naming_series,options,PS-.YY.-
+Installation Note,naming_series,options,INS-.YY.-
+Delivery Trip,naming_series,options,DELT-.YY.-
+Request for Quotation,naming_series,options,RFQ-.YY.-
+Downtime Entry,naming_series,options,DTE-.YY.-

@@ -1,0 +1,1603 @@
+{
+    "country_code": "cn",
+    "name": "小企业会计准则(2024)",
+    "tree": {
+        "资产类": {
+            "is_group": 1,
+            "root_type": "Asset",
+            "account_number": 1,
+            "account_type": "",
+            "流动资产": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 100,
+                "account_type": "",
+                "货币资金": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1000,
+                    "account_type": "",
+                    "库存现金": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1001,
+                        "account_type": "Cash"
+                    },
+                    "银行存款": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1002,
+                        "account_type": "Bank"
+                    },
+                    "其他货币资金": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1012,
+                        "account_type": "Bank"
+                    }
+                },
+                "短期投资": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1101,
+                    "account_type": "",
+                    "股票": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 101010,
+                        "account_type": "Current Asset"
+                    },
+                    "债券": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1101020,
+                        "account_type": "Current Asset"
+                    },
+                    "基金": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1101030,
+                        "account_type": "Current Asset"
+                    }
+                },
+                "应收票据": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1121,
+                    "account_type": ""
+                },
+                "应收账款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1122,
+                    "account_type": "Receivable"
+                },
+                "预付账款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1123,
+                    "account_type": "Payable"
+                },
+                "应收股利": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1131,
+                    "account_type": "Chargeable"
+                },
+                "应收利息": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1132,
+                    "account_type": "Chargeable"
+                },
+                "其他应收款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1221,
+                    "account_type": "Indirect Income"
+                },
+                "存货": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1400,
+                    "account_type": "",
+                    "材料采购": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1401,
+                        "account_type": "Stock"
+                    },
+                    "在途物资": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1402,
+                        "account_type": "Stock"
+                    },
+                    "原材料": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1403,
+                        "account_type": "Stock"
+                    },
+                    "材料成本差异": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1404,
+                        "account_type": "Stock"
+                    },
+                    "库存商品": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1405,
+                        "account_type": "Stock"
+                    },
+                    "商品进销差价": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1407,
+                        "account_type": "Stock"
+                    },
+                    "委托加工物资": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1408,
+                        "account_type": "Stock"
+                    },
+                    "在产品": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1409,
+                        "account_type": "",
+                        "tax_rate": "Stock"
+                    },                     
+                    "周转材料": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1411,
+                        "account_type": "Stock"
+                    },
+                    "消耗性生物资产": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1421,
+                        "account_type": "Stock"
+                    }
+                },
+                "其他流动资产": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1490,
+                    "account_type": ""
+                }
+            },
+            "非流动资产": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 150,
+                "account_type": "",
+                "长期债券投资": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1501,
+                    "account_type": "Current Asset"
+                },
+                "长期股权投资": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1511,
+                    "account_type": "Current Asset"
+                },
+                "固定资产": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1601,
+                    "account_type": "",
+                    "固定资产_房屋、建筑物": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601010,
+                        "account_type": "Fixed Asset"
+                    },
+                    "固定资产_机器": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601020,
+                        "account_type": "Fixed Asset"
+                    },
+                    "固定资产_机械": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601030,
+                        "account_type": "Fixed Asset"
+                    },
+                    "固定资产_运输工具": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601040,
+                        "account_type": "Fixed Asset"
+                    },
+                    "固定资产_设备": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601050,
+                        "account_type": "Fixed Asset"
+                    },
+                    "固定资产_器具": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601060,
+                        "account_type": "Fixed Asset"
+                    },
+                    "固定资产_工具": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1601070,
+                        "account_type": "Fixed Asset"
+                    }
+                },
+                "累计折旧": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1602,
+                    "account_type": "",
+                    "累计折旧_房屋、建筑物": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602010,
+                        "account_type": "Accumulated Depreciation"
+                    },
+                    "累计折旧_机器": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602020,
+                        "account_type": "Accumulated Depreciation"
+                    },
+                    "累计折旧_机械": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602030,
+                        "account_type": "Accumulated Depreciation"
+                    },
+                    "累计折旧_运输工具": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602040,
+                        "account_type": "Accumulated Depreciation"
+                    },
+                    "累计折旧_设备": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602050,
+                        "account_type": "Accumulated Depreciation"
+                    },
+                    "累计折旧_器具": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602060,
+                        "account_type": "Accumulated Depreciation"
+                    },
+                    "累计折旧_工具": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1602070,
+                        "account_type": "Accumulated Depreciation"
+                    }
+                },
+                "在建工程": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1604,
+                    "account_type": "Capital Work in Progress"
+                },
+                "工程物资": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1605,
+                    "account_type": "Capital Work in Progress"
+                },
+                "固定资产清理": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1606,
+                    "account_type": "Fixed Asset"
+                },
+                "生产性生物资产": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1620,
+                    "account_type": "",
+                    "生产性生物资产": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1621,
+                        "account_type": "Fixed Asset"
+                    },
+                    "生产性生物资产累计折旧": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1622,
+                        "account_type": "Accumulated Depreciation"
+                    }
+                },
+                "无形资产": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1700,
+                    "account_type": "",
+                    "无形资产": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1701,
+                        "account_type": "Fixed Asset"
+                    },
+                    "累计摊销": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1702,
+                        "account_type": "Accumulated Depreciation"
+                    }
+                },
+                "开发支出": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1710,
+                    "account_type": ""
+                },
+                "长期待摊费用": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 1801,
+                    "account_type": ""
+                },
+                "其他非流动资产": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 1900,
+                    "account_type": "",
+                    "待处理财产损溢_非流动资产": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 1901,
+                        "account_type": ""
+                    }
+                }
+            }
+        },
+        "负债类": {
+            "is_group": 1,
+            "root_type": "Liability",
+            "account_number": 2,
+            "account_type": "",
+            "流动负债": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 200,
+                "account_type": "",
+                "短期借款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2001,
+                    "account_type": "Liability"
+                },
+                "应付票据": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2201,
+                    "account_type": ""
+                },
+                "应付账款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2202,
+                    "account_type": "Payable"
+                },
+                "应付账款-暂估库存": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 220202,
+                    "account_type": "Stock Received But Not Billed"
+                },
+                "应付账款-暂估服务": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 220203,
+                    "account_type": "Service Received But Not Billed"
+                },
+                "应付账款-暂估资产": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 220204,
+                    "account_type": "Asset Received But Not Billed"
+                },
+                "应付账款-暂估委外加工费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 220205,
+                    "account_type": "Asset Received But Not Billed"
+                },
+                "预收账款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2203,
+                    "account_type": "Receivable"
+                },
+                "应付职工薪酬": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 2211,
+                    "account_type": "",
+                    "职工工资": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211010,
+                        "account_type": "Payable"
+                    },
+                    "奖金、津贴和补贴": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211020,
+                        "account_type": "Indirect Expense"
+                    },
+                    "职工福利费": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211030,
+                        "account_type": "Indirect Expense"
+                    },
+                    "社会保险费": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211040,
+                        "account_type": "Indirect Expense"
+                    },
+                    "住房公积金": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211050,
+                        "account_type": "Indirect Expense"
+                    },
+                    "工会经费": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211060,
+                        "account_type": "Indirect Expense"
+                    },
+                    "职工教育经费": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211070,
+                        "account_type": "Indirect Expense"
+                    },
+                    "非货币性福利": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211080,
+                        "account_type": "Indirect Expense"
+                    },
+                    "辞退福利": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211090,
+                        "account_type": "Indirect Expense"
+                    },
+                    "其他": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2211100,
+                        "account_type": "Indirect Expense"
+                    }
+                },
+                "应交税费": {
+                    "is_group": 1,
+                    "root_type": "Liability",
+                    "account_number": 2221,
+                    "account_type": "Tax",
+                    "应交增值税": {
+                        "is_group": 1,
+                        "root_type": "Liability",
+                        "account_number": 2221000,
+                        "account_type": "Tax",
+                        "进项税额": {
+                            "is_group": 0,
+                            "root_type": "Liability",
+                            "account_number": 2221001,
+                            "account_type": "Tax"
+                        },
+                        "已交税金": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221002,
+                            "account_type": ""
+                        },
+                        "转出未交增值税": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221003,
+                            "account_type": ""
+                        },
+                        "减免税款": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221004,
+                            "account_type": ""
+                        },
+                        "销项税额": {
+                            "is_group": 0,
+                            "root_type": "Liability",
+                            "account_number": 2221005,
+                            "account_type": "Tax"
+                        },
+                        "出口退税": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221006,
+                            "account_type": ""
+                        },
+                        "进项税额转出": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221007,
+                            "account_type": ""
+                        },
+                        "出口抵减内销产品应纳税额": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221008,
+                            "account_type": ""
+                        },
+                        "转出多交增值税": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221009,
+                            "account_type": ""
+                        },
+                        "销项税额抵减": {
+                            "is_group": 0,
+                            "root_type": "",
+                            "account_number": 2221010,
+                            "account_type": ""
+                        }
+                    },
+                    "预交增值税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221011,
+                        "account_type": ""
+                    },
+                    "待抵扣进项税额": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221012,
+                        "account_type": ""
+                    },
+                    "待认证进项税额": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221013,
+                        "account_type": ""
+                    },
+                    "待转销项税额": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221014,
+                        "account_type": ""
+                    },
+                    "增值税留抵税额": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221015,
+                        "account_type": ""
+                    },
+                    "转让金融商品应交增值税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221016,
+                        "account_type": ""
+                    },
+                    "代扣代交增值税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221017,
+                        "account_type": ""
+                    },
+                    "简易计税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221018,
+                        "account_type": ""
+                    },
+                    "应交增值税（小规模）": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221019,
+                        "account_type": "Tax"
+                    },
+                    "未交增值税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221020,
+                        "account_type": "Tax"
+                    },
+                    "应交消费税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221030,
+                        "account_type": "Tax"
+                    },
+                    "应交城市维护建设税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221040,
+                        "account_type": "Tax"
+                    },
+                    "应交企业所得税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221050,
+                        "account_type": "Tax"
+                    },
+                    "应交资源税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221060,
+                        "account_type": "Tax"
+                    },
+                    "应交土地增值税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221070,
+                        "account_type": "Tax"
+                    },
+                    "应交城镇土地使用税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221080,
+                        "account_type": "Tax"
+                    },
+                    "应交房产税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221090,
+                        "account_type": "Tax"
+                    },
+                    "应交车船税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221100,
+                        "account_type": "Tax"
+                    },
+                    "应交教育费附加": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221110,
+                        "account_type": "Tax"
+                    },
+                    "应交矿产资源补偿费": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221120,
+                        "account_type": "Tax"
+                    },
+                    "应交排污费": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221130,
+                        "account_type": "Tax"
+                    },
+                    "代扣代缴的个人所得税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221140,
+                        "account_type": "Indirect Expense"
+                    },
+                    "应交地方教育费附加": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221150,
+                        "account_type": "Tax"
+                    },
+                    "应交印花税": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2221160,
+                        "account_type": "Tax"
+                    }
+                },
+                "应付利息": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2231,
+                    "account_type": "Current Liability"
+                },
+                "应付利润": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2232,
+                    "account_type": "Equity"
+                },
+                "其他应付款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2241,
+                    "account_type": ""
+                },
+                "其他流动负债": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 2290,
+                    "account_type": "",
+                    "一年内到期的非流动负债": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2291,
+                        "account_type": ""
+                    }
+                }
+            },
+            "非流动负债": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 240,
+                "account_type": "",
+                "长期借款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2501,
+                    "account_type": "Liability"
+                },
+                "长期应付款": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2701,
+                    "account_type": "Liability"
+                },
+                "递延收益": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 2801,
+                    "account_type": "Indirect Income"
+                },
+                "其他非流动负债": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 2900,
+                    "account_type": "",
+                    "待处理财产损溢_非流动负债": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 2901,
+                        "account_type": ""
+                    }
+                }
+            }
+        },
+        "权益类": {
+            "is_group": 1,
+            "root_type": "Equity",
+            "account_number": 3,
+            "account_type": "",
+            "实收资本": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 3001,
+                "account_type": "Equity"
+            },
+            "资本公积": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 3002,
+                "account_type": "Equity"
+            },
+            "盈余公积": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 3101,
+                "account_type": "",
+                "法定盈余公积": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 3101010,
+                    "account_type": ""
+                },
+                "任意盈余公积": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 3101020,
+                    "account_type": ""
+                }
+            },
+            "未分配利润": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 3102,
+                "account_type": "",
+                "本年利润": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 3103,
+                    "account_type": ""
+                },
+                "利润分配": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 3104,
+                    "account_type": "",
+                    "其他转入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 3104010,
+                        "account_type": ""
+                    },
+                    "提取法定盈余公积": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 3104020,
+                        "account_type": ""
+                    },
+                    "提取任意盈余公积": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 3104030,
+                        "account_type": ""
+                    },
+                    "应付利润": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 3104080,
+                        "account_type": ""
+                    },
+                    "未分配利润": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 3104090,
+                        "account_type": ""
+                    }
+                }
+            },
+            "临时开账科目": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 9999,
+                "account_type": "Temporary"
+            }            
+        },
+        "成本类": {
+            "is_group": 1,
+            "root_type": "Asset",
+            "account_number": 4,
+            "account_type": "",
+            "生产成本": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 4001,
+                "account_type": "Cost of Goods Sold"
+            },
+            "生产成本-基本生产成本": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 400101,
+                "account_type": "Cost of Goods Sold"
+            },
+            "生产成本-辅助生产成本": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 400102,
+                "account_type": "Cost of Goods Sold"
+            },
+            "生产成本-库存调整": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 400103,
+                "account_type": "Stock Adjustment"
+            },
+            "生产成本-结转": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 400199,
+                "account_type": "Cost of Goods Sold"
+            },            
+            "制造费用": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 4101,
+                "account_type": "Cost of Goods Sold"
+            },
+            "制造费用-结转资产": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 410103,
+                "account_type": "Expenses Included In Asset Valuation"
+            },
+            "制造费用-结转库存": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 410199,
+                "account_type": "Expenses Included In Valuation"
+            },                   
+            "研发支出": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 4301,
+                "account_type": "Cost of Goods Sold"
+            },
+            "工程施工": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 4401,
+                "account_type": "Cost of Goods Sold"
+            },
+            "机械作业": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 4403,
+                "account_type": "Cost of Goods Sold"
+            }
+        },
+        "收入类": {
+            "is_group": 1,
+            "root_type": "Income",
+            "account_number": 500,
+            "account_type": "",
+            "营业收入": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5000,
+                "account_type": "",
+                "主营业务收入": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5001,
+                    "account_type": "",
+                    "销售商品收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5001010,
+                        "account_type": "Direct Income"
+                    },
+                    "提供劳务收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5001020,
+                        "account_type": "Direct Income"
+                    },
+                    "建造合同收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5001030,
+                        "account_type": "Direct Income"
+                    },
+                    "让渡资产使用权收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5001040,
+                        "account_type": "Direct Income"
+                    },
+                    "其他": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5001050,
+                        "account_type": "Direct Income"
+                    }
+                },
+                "其他业务收入": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5051,
+                    "account_type": "",
+                    "销售材料收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5051010,
+                        "account_type": "Direct Income"
+                    },
+                    "出租固定资产收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5051020,
+                        "account_type": "Direct Income"
+                    },
+                    "出租无形资产收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5051030,
+                        "account_type": "Direct Income"
+                    },
+                    "出租包装物和商品收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5051040,
+                        "account_type": "Direct Income"
+                    },
+                    "其他": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5051050,
+                        "account_type": "Direct Income"
+                    }
+                }
+            },
+            "投资收益": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 5111,
+                "account_type": "Chargeable"
+            },
+            "营业外收入": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5301,
+                "account_type": "",
+                "非流动资产处置利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301010,
+                    "account_type": "Fixed Asset"
+                },
+                "非货币性资产交换利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301020,
+                    "account_type": "Fixed Asset"
+                },
+                "债务重组利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301030,
+                    "account_type": "Fixed Asset"
+                },
+                "政府补助利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301040,
+                    "account_type": "Indirect Income"
+                },
+                "盘盈利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301050,
+                    "account_type": "Indirect Income"
+                },
+                "捐赠利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301060,
+                    "account_type": "Indirect Income"
+                },
+                "罚没利得": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301070,
+                    "account_type": "Indirect Income"
+                },
+                "确实无法偿付的应付款项": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301080,
+                    "account_type": "Indirect Income"
+                },
+                "汇兑收益": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301090,
+                    "account_type": "Indirect Income"
+                },
+                "其他": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5301100,
+                    "account_type": "Indirect Income"
+                }
+            }
+        },
+        "费用类": {
+            "is_group": 1,
+            "root_type": "Expense",
+            "account_number": 540,
+            "account_type": "",
+            "营业成本": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5400,
+                "account_type": "",
+                "主营业务成本": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5401,
+                    "account_type": "",
+                    "销售商品成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5401010,
+                        "account_type": "Direct Expense"
+                    },
+                    "提供劳务成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5401020,
+                        "account_type": "Direct Expense"
+                    },
+                    "建造合同成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5401030,
+                        "account_type": "Direct Expense"
+                    },
+                    "让渡资产使用权成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5401040,
+                        "account_type": "Direct Expense"
+                    },
+                    "其他": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5401050,
+                        "account_type": "Direct Expense"
+                    }
+                },
+                "其他业务成本": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5402,
+                    "account_type": "",
+                    "材料销售成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5402010,
+                        "account_type": "Direct Expense"
+                    },
+                    "出租固定资产成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5402020,
+                        "account_type": "Direct Expense"
+                    },
+                    "出租无形资产成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5402030,
+                        "account_type": "Direct Expense"
+                    },
+                    "包装物出租成本": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5402040,
+                        "account_type": "Direct Expense"
+                    },
+                    "其他": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5402050,
+                        "account_type": "Direct Expense"
+                    }
+                }
+            },
+            "税金及附加": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 5403,
+                "account_type": "Tax"
+            },
+            "销售费用": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5601,
+                "account_type": "",
+                "销售费用_职工薪酬": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601010,
+                    "account_type": "Indirect Expense"
+                },
+                "销售费用_劳务费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601020,
+                    "account_type": "Temporary"
+                },
+                "销售费用_咨询顾问费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601030,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_业务招待费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601040,
+                    "account_type": "Temporary"
+                },
+                "销售费用_广告费和业务宣传费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601050,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_佣金和手续费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601060,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_资产折旧摊销费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601070,
+                    "account_type": "Depreciation"
+                },
+                "销售费用_财产损耗、盘亏及毁损损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601080,
+                    "account_type": ""
+                },
+                "销售费用_办公费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601090,
+                    "account_type": "Temporary"
+                },
+                "销售费用_董事会费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601100,
+                    "account_type": "Temporary"
+                },
+                "销售费用_租赁费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601110,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_诉讼费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601120,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_差旅费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601130,
+                    "account_type": "Temporary"
+                },
+                "销售费用_保险费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601140,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_运输、仓储费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601150,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_修理费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601160,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_包装费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601170,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_技术转让费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601180,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_研究费用": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601190,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_各项税费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601200,
+                    "account_type": "Direct Expense"
+                },
+                "销售费用_其他": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5601250,
+                    "account_type": "Direct Expense"
+                }
+            },
+            "管理费用": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5602,
+                "account_type": "",
+                "管理费用_职工薪酬": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602010,
+                    "account_type": "Indirect Expense"
+                },
+                "管理费用_劳务费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602020,
+                    "account_type": "Temporary"
+                },
+                "管理费用_咨询顾问费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602030,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_业务招待费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602040,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_广告费和业务宣传费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602050,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_佣金和手续费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602060,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_资产折旧摊销费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602070,
+                    "account_type": "Depreciation"
+                },
+                "管理费用_财产损耗、盘亏及毁损损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602080,
+                    "account_type": "Temporary"
+                },
+                "管理费用_办公费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602090,
+                    "account_type": "Temporary"
+                },
+                "管理费用_董事会费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602100,
+                    "account_type": "Temporary"
+                },
+                "管理费用_租赁费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602110,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_诉讼费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602120,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_差旅费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602130,
+                    "account_type": "Temporary"
+                },
+                "管理费用_保险费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602140,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_运输、仓储费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602150,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_修理费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602160,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_包装费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602170,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_技术转让费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602180,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_研究费用": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602190,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_各项税费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602200,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_党组织工作经费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602210,
+                    "account_type": "Direct Expense"
+                },
+                "管理费用_其他": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5602250,
+                    "account_type": "Direct Expense"
+                }
+            },
+            "财务费用": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5603,
+                "account_type": "",
+                "财务费用_手续费": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5603060,
+                    "account_type": "Temporary"
+                },
+                "财务费用_利息收支": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5603210,
+                    "account_type": "",
+                    "财务费用_存款利息收入": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5603211,
+                        "account_type": "Indirect Income"
+                    },
+                    "财务费用_利息费用": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5603212,
+                        "account_type": "Current Liability"
+                    }
+                },
+                "财务费用_汇兑差额": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5603220,
+                    "account_type": ""
+                },
+                "财务费用_现金折扣": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5603230,
+                    "account_type": "Temporary"
+                },
+                "财务费用_其他": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5603250,
+                    "account_type": "Temporary"
+                }
+            },
+            "营业外支出": {
+                "is_group": 1,
+                "root_type": "",
+                "account_number": 5711,
+                "account_type": "",
+                "非流动资产处置净损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5711010,
+                    "account_type": "Fixed Asset"
+                },
+                "非货币性资产交换损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number":5711020,
+                    "account_type": "Fixed Asset"
+                },
+                "债务重组损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5711030,
+                    "account_type": ""
+                },
+                "非常损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5711040,
+                    "account_type": ""
+                },
+                "捐赠支出": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5711050,
+                    "account_type": "Temporary"
+                },
+                "赞助支出": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5711060,
+                    "account_type": "Temporary"
+                },
+                "罚没支出": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5711070,
+                    "account_type": "",
+                    "税收滞纳金": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5711071,
+                        "account_type": "Temporary"
+                    },
+                    "罚款支出": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5711072,
+                        "account_type": "Temporary"
+                    }
+                },
+                "坏账损失": {
+                    "is_group": 0,
+                    "root_type": "",
+                    "account_number": 5711080,
+                    "account_type": ""
+                },
+                "无法收回的债券股权投资损失": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5711090,
+                    "account_type": "",
+                    "无法收回的长期债券投资损失": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5711091,
+                        "account_type": ""
+                    },
+                    "无法收回的长期股权投资损失": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5711092,
+                        "account_type": ""
+                    }
+                },
+                "其他": {
+                    "is_group": 1,
+                    "root_type": "",
+                    "account_number": 5711100,
+                    "account_type": "",
+                    "自然灾害等不可抗力因素造成的损失": {
+                        "is_group": 0,
+                        "root_type": "",
+                        "account_number": 5711101,
+                        "account_type": ""
+                    }
+                }
+            },
+            "所得税费用": {
+                "is_group": 0,
+                "root_type": "",
+                "account_number": 5801,
+                "account_type": "Tax"
+            }
+        }
+    }
+}
