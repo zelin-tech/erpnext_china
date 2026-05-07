@@ -43,15 +43,8 @@ jinja = {
 override_doctype_class = {}
 
 financial_doctypes = [
-    "Quotation",
-    "Sales Order",
-    "Delivery Note",
     "Sales Invoice",
     "Purchase Order",
-    "Purchase Receipt",
-    "Purchase Invoice",
-    "Payment Entry",
-    "Journal Entry"
 ]
 
 for dt in financial_doctypes:
@@ -62,3 +55,4 @@ for dt in financial_doctypes:
         f"erpnext_china.overrides.{module_name}.Custom"
         f"{module_name.title().replace('_', '')}"
     )
+
