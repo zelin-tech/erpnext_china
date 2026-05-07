@@ -40,7 +40,7 @@ jinja = {
     ]
 }
 
-extend_doctype_class = {
+override_doctype_class = {
 
     "Quotation": [
         "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
