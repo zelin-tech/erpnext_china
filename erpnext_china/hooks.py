@@ -42,39 +42,30 @@ jinja = {
 
 override_doctype_class = {
 
-    "Quotation": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Quotation": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Sales Order": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Sales Order": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Delivery Note": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Delivery Note": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Sales Invoice": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Sales Invoice": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Purchase Order": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Purchase Order": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Purchase Receipt": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Purchase Receipt": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Purchase Invoice": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Purchase Invoice": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Payment Entry": [
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ],
+    "Payment Entry": 
+        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
 
-    "Journal Entry": [
+    "Journal Entry": 
         "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-    ]
 }
