@@ -39,24 +39,12 @@ def get_submit_username(doc):
 
 
 def money_in_words(number, main_currency=None, fraction_currency=None):
-    """
-    中文金额大写入口。
-
-    注意：
-    这个函数不会自动覆盖 frappe.utils.money_in_words。
-    建议在 hooks.py 的 jinja.methods 或 doc_events 中显式调用。
-    """
+    """兼容旧模板调用。"""
     return cn_money_in_words(number, main_currency)
 
 
 def cn_money_in_words(number, currency=None):
-    """
-    金额转中文大写金额。
-
-    示例：
-    1234.56 -> 人民币壹仟贰佰叁拾肆元伍角陆分
-    1234.00 -> 人民币壹仟贰佰叁拾肆元整
-    """
+    """金额转中文大写金额。"""
     if number is None:
         return ""
 
@@ -75,18 +63,9 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
     """
     金额转中文大写。
 
-    参数：
-    capital:
-        True  -> 大写汉字金额：壹贰叁
-        False -> 普通汉字金额：一二三
-
-    classical:
-        True  -> 使用“元”
-        False -> 使用“圆”
-
-    prefix_text:
-        True  -> 前缀加“人民币”
-        False -> 不加前缀
+    例如：
+    1234.56 -> 人民币壹仟贰佰叁拾肆元伍角陆分
+    1234.00 -> 人民币壹仟贰佰叁拾肆元整
     """
     if not isinstance(value, (Decimal, str, int)):
         warnings.warn(
@@ -123,23 +102,23 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
     if not isinstance(value, Decimal):
         value = Decimal(str(value)).quantize(Decimal("0.01"))
 
+    value = value.quantize(Decimal("0.01"))
+
     if value < 0:
         prefix += "负"
         value = -value
 
-    s = str(value.quantize(Decimal("0.01")))
-
-    if len(s) > 19:
-        raise ValueError("金额太大了，不知道该怎么表达。")
-
-    istr, dstr = s.split(".")
-    istr = istr[::-1]
-
-    so = []
-
     if value == 0:
         return prefix + num[0] + iunit[0] + "整"
 
+    s = str(value)
+    istr, dstr = s.split(".")
+    istr = istr[::-1]
+
+    if len(istr) > len(iunit):
+        raise ValueError("金额太大了，不知道该怎么表达。")
+
+    so = []
     haszero = False
 
     if dstr == "00":
@@ -160,7 +139,7 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
         so.append(num[0])
         haszero = True
 
-    # 无整数部分，例如 0.56
+    # 小于 1 元，例如 0.56
     if istr == "0":
         if haszero and so:
             so.pop()
@@ -168,12 +147,8 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
         so.reverse()
         return "".join(so)
 
-    # 整数部分
     for i, n in enumerate(istr):
         n = int(n)
-
-        if i >= len(iunit):
-            raise ValueError("金额太大了，不知道该怎么表达。")
 
         if i % 4 == 0:
             if i == 8 and so and so[-1] == iunit[4]:
@@ -206,19 +181,18 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
 
 def set_chinese_in_words(doc, method=None):
     """
-    在单据保存/提交前重写 in_words 和 base_in_words。
+    强制重写单据上的 in_words / base_in_words 字段。
 
-    建议在 hooks.py 的 doc_events 中调用。
+    用于 Sales Order、Sales Invoice、Purchase Order 等单据。
+    不判断语言环境，保存后直接写中文大写金额。
     """
-    if not (frappe.local.lang or "").startswith("zh"):
-        return
-
     if doc.meta.get_field("base_in_words"):
         base_amount = _get_doc_amount(
             doc,
             rounded_field="base_rounded_total",
             total_field="base_grand_total",
         )
+
         doc.base_in_words = cn_money_in_words(
             abs(base_amount),
             doc.get("company_currency"),
@@ -230,6 +204,7 @@ def set_chinese_in_words(doc, method=None):
             rounded_field="rounded_total",
             total_field="grand_total",
         )
+
         doc.in_words = cn_money_in_words(
             abs(amount),
             doc.get("currency"),
@@ -237,17 +212,12 @@ def set_chinese_in_words(doc, method=None):
 
 
 def _get_doc_amount(doc, rounded_field, total_field):
-    """
-    优先使用 rounded_total；
-    如果单据禁用了 rounded total，则使用 grand_total。
-    """
-    use_rounded = (
+    """优先使用 rounded_total，否则使用 grand_total。"""
+    if (
         doc.meta.get_field(rounded_field)
-        and not _is_rounded_total_disabled(doc)
         and doc.get(rounded_field) is not None
-    )
-
-    if use_rounded:
+        and not _is_rounded_total_disabled(doc)
+    ):
         return flt(doc.get(rounded_field))
 
     return flt(doc.get(total_field))
