@@ -40,32 +40,25 @@ jinja = {
     ]
 }
 
-override_doctype_class = {
+override_doctype_class = {}
 
-    "Quotation": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
+financial_doctypes = [
+    "Quotation",
+    "Sales Order",
+    "Delivery Note",
+    "Sales Invoice",
+    "Purchase Order",
+    "Purchase Receipt",
+    "Purchase Invoice",
+    "Payment Entry",
+    "Journal Entry"
+]
 
-    "Sales Order": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
+for dt in financial_doctypes:
 
-    "Delivery Note": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
+    module_name = dt.lower().replace(" ", "_")
 
-    "Sales Invoice": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
-
-    "Purchase Order": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
-
-    "Purchase Receipt": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
-
-    "Purchase Invoice": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
-
-    "Payment Entry": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin",
-
-    "Journal Entry": 
-        "erpnext_china.mixins.chinese_money.ChineseMoneyMixin"
-}
+    override_doctype_class[dt] = (
+        f"erpnext_china.overrides.{module_name}.Custom"
+        f"{module_name.title().replace('_', '')}"
+    )
