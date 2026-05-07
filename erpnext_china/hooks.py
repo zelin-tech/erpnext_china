@@ -40,19 +40,26 @@ jinja = {
     ]
 }
 
-override_doctype_class = {}
+doc_events = {
+    doctype: {
+        "validate": "erpnext_china.print_utils.set_chinese_in_words",
+        "before_submit": "erpnext_china.print_utils.set_chinese_in_words",
+    }
+    for doctype in [
+        "Sales Invoice",
+        "Sales Order",
+        "Delivery Note",
+        "Quotation",
+        "Purchase Invoice",
+        "Purchase Order",
+        "Purchase Receipt",
+        "Supplier Quotation",
+        "Payment Entry",
+    ]
+}
 
-financial_doctypes = [
-    "Sales Invoice",
-    "Purchase Order",
-]
-
-for dt in financial_doctypes:
-
-    module_name = dt.lower().replace(" ", "_")
-
-    override_doctype_class[dt] = (
-        f"erpnext_china.overrides.{module_name}.Custom"
-        f"{module_name.title().replace('_', '')}"
-    )
-
+jinja = {
+    "methods": [
+        "erpnext_china.print_utils.cn_money_in_words",
+    ]
+}
