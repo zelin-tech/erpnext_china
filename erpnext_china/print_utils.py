@@ -63,9 +63,10 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
     """
     金额转中文大写。
 
-    例如：
+    示例：
     1234.56 -> 人民币壹仟贰佰叁拾肆元伍角陆分
     1234.00 -> 人民币壹仟贰佰叁拾肆元整
+    0.56    -> 人民币伍角陆分
     """
     if not isinstance(value, (Decimal, str, int)):
         warnings.warn(
@@ -147,6 +148,7 @@ def cncurrency(value, capital=True, prefix_text=False, classical=None):
         so.reverse()
         return "".join(so)
 
+    # 整数部分
     for i, n in enumerate(istr):
         n = int(n)
 
@@ -183,8 +185,8 @@ def set_chinese_in_words(doc, method=None):
     """
     强制重写单据上的 in_words / base_in_words 字段。
 
-    用于 Sales Order、Sales Invoice、Purchase Order 等单据。
-    不判断语言环境，保存后直接写中文大写金额。
+    兼容 ERPNext v15 / v16。
+    不判断语言环境，适合中国本地化环境。
     """
     if doc.meta.get_field("base_in_words"):
         base_amount = _get_doc_amount(
@@ -213,18 +215,27 @@ def set_chinese_in_words(doc, method=None):
 
 def _get_doc_amount(doc, rounded_field, total_field):
     """优先使用 rounded_total，否则使用 grand_total。"""
-    if (
+    use_rounded = (
         doc.meta.get_field(rounded_field)
         and doc.get(rounded_field) is not None
         and not _is_rounded_total_disabled(doc)
-    ):
+    )
+
+    if use_rounded:
         return flt(doc.get(rounded_field))
 
     return flt(doc.get(total_field))
 
 
 def _is_rounded_total_disabled(doc):
-    return (
-        hasattr(doc, "is_rounded_total_disabled")
-        and doc.is_rounded_total_disabled()
-    )
+    """
+    兼容 v15 / v16 / 自定义 DocType。
+
+    有些 DocType 没有 is_rounded_total_disabled 方法。
+    """
+    method = getattr(doc, "is_rounded_total_disabled", None)
+
+    if callable(method):
+        return method()
+
+    return False
