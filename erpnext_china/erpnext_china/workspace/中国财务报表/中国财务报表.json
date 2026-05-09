@@ -5,10 +5,9 @@
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
- "type": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "",
+ "icon": "cn-account-reporting",
  "idx": 0,
  "indicator_color": "green",
  "is_hidden": 0,
@@ -103,7 +102,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-01-07 21:15:13.939508",
+ "modified": "2026-05-09 17:06:37.830969",
  "modified_by": "fisher@abc.com",
  "module": "ERPNext China",
  "name": "\u4e2d\u56fd\u8d22\u52a1\u62a5\u8868",

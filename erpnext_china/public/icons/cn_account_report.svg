@@ -1,0 +1,25 @@
+<svg id="frappe-symbols" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-cn-account-reporting" viewBox="0 0 64 64">
+        <path d="M12 28C12 24.6863 14.6863 22 18 22C18.5534 22 19.0886 22.0748 19.5968 22.215C21.037 20.2526 23.3686 19 26 19C30.4183 19 34 22.5817 34 27C34 27.218 33.9912 27.4339 33.974 27.6472C34.619 27.2351 35.3824 27 36 27C38.2091 27 40 28.7909 40 31C40 33.2091 38.2091 35 36 35H18C14.6863 35 12 32.3137 12 29V28Z" stroke="#00A3A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        
+        <!-- 算盘意象 -->
+        <rect x="36" y="14" width="24" height="18" rx="2" stroke="#00A3A3" stroke-width="2"/>
+        <path d="M42 14V32M48 14V32M54 14V32" stroke="#00A3A3" stroke-width="2"/>
+        <path d="M36 20H60" stroke="#00A3A3" stroke-width="2"/>
+        <circle cx="42" cy="17" r="1" fill="#00A3A3"/>
+        <circle cx="48" cy="17" r="1" fill="#00A3A3"/>
+        <circle cx="54" cy="17" r="1" fill="#00A3A3"/>
+        <circle cx="42" cy="24" r="1" fill="#00A3A3"/>
+        <circle cx="48" cy="27" r="1" fill="#00A3A3"/>
+        <circle cx="54" cy="24" r="1" fill="#00A3A3"/>
+
+        <!-- 审计清单 -->
+        <rect x="16" y="38" width="18" height="22" rx="2" stroke="#00A3A3" stroke-width="2"/>
+        <path d="M20 44H30M20 49H30M20 54H26" stroke="#00A3A3" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22 36V40M28 36V40" stroke="#00A3A3" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- 报表趋势图 (带 10% 透明度的背景填充) -->
+        <rect x="40" y="42" width="20" height="18" rx="2" fill="#00A3A3" fill-opacity="0.1" stroke="#00A3A3" stroke-width="2"/>
+        <path d="M44 54L48 50L52 52L56 46" stroke="#00A3A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
