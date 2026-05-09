@@ -54,6 +54,7 @@ uom_list = [
 def after_install():
     if not frappe.is_setup_complete():
 	    set_china_default()
+        set_v16_icon()
 
 def set_china_default():    
     try:
@@ -112,3 +113,26 @@ def change_field_property():
                 }).insert(ignore_permissions=1, ignore_if_duplicate=1)
     except:
         frappe.log_error("erpnext_china change_field_property failed")
+
+def set_v16_icon():
+    """安装后更新桌面图标和工作流侧边栏的图标配置"""
+    
+    # 1. 更新 Desktop Icon：中国财务报表
+    desktop_icon_name = "中国财务报表"
+    if frappe.db.exists("Desktop Icon", desktop_icon_name):
+        frappe.db.set_value(
+            "Desktop Icon",
+            desktop_icon_name,
+            "icon",
+            "/assets/erpnext_china/icons/account_report.svg"
+        )
+    
+    # 2. 更新 Workflow Sidebar：中国财务报表
+    workflow_sidebar_name = "中国财务报表"
+    if frappe.db.exists("Workflow Sidebar", workflow_sidebar_name):
+        frappe.db.set_value(
+            "Workflow Sidebar",
+            workflow_sidebar_name,
+            "header_icon",
+            "cn-account-reporting"
+        )

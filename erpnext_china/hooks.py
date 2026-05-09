@@ -11,15 +11,17 @@ after_install = "erpnext_china.setup.install.after_install"
 
 setup_wizard_requires = "assets/erpnext_china/js/setup_wizard.js"
 
+app_include_icons = [
+    "erpnext_china/icons/account_report.svg",
+	"erpnext_china/icons/cn_account_report.svg",
+]
+
 doctype_js = {
      "Purchase Order" : "public/js/purchase_order.js",
      "Sales Order" : "public/js/sales_order.js",
 	"Sales Invoice" : "public/js/sales_invoice.js",
 }
 
-app_include_icons = [
-	"erpnext_china/icons/cn_account_report.svg",
-]
 override_whitelisted_methods = {
     "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": 
          "erpnext_china.chart_of_accounts.custom_accounts.custom_account.get_charts_for_country",
