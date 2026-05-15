@@ -12,8 +12,13 @@ after_install = "erpnext_china.setup.install.after_install"
 setup_wizard_requires = "assets/erpnext_china/js/setup_wizard.js"
 
 app_include_icons = [
-    "erpnext_china/icons/account_report.svg",
-	"erpnext_china/icons/cn_account_report.svg",
+    "/assets/erpnext_china/icons/account_report.svg",
+	"/assets/erpnext_china/icons/cn_account_report.svg"
+]
+
+web_include_icons = [
+    "/assets/erpnext_china/icons/account_report.svg",
+	"/assets/erpnext_china/icons/cn_account_report.svg"
 ]
 
 doctype_js = {
