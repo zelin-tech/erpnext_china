@@ -165,6 +165,7 @@ def get_chart(chart_template, existing_company=None):
                 fname = frappe.as_unicode(fname)
                 if fname.endswith(".json"):
                     try:
+                        # nosemgrep: frappe-security-file-traversal -- fname comes from os.listdir of an app-internal directory, no user input in path
                         with open(os.path.join(path, fname)) as f:
                             chart = f.read()
                             if chart and json.loads(chart).get("name") == chart_template:
@@ -181,6 +182,7 @@ def get_chart(chart_template, existing_company=None):
                     fname1 = frappe.as_unicode(fname1)
                     if fname1.endswith(".json"):
                         try:
+                            # nosemgrep: frappe-security-file-traversal -- fname1 comes from os.listdir of an app-internal directory, no user input in path
                             with open(os.path.join(custom_charts_path, fname1)) as f1:
                                 chart1 = f1.read()
                                 if chart1 and json.loads(chart1).get("name") == chart_template:
@@ -221,6 +223,7 @@ def get_charts_for_country(country, with_standard=False):
                     fname = frappe.as_unicode(fname)
                     if (fname.startswith(country_code) or fname.startswith(country)) and fname.endswith(".json"):
                         try:
+                            # nosemgrep: frappe-security-file-traversal -- fname comes from os.listdir of an app-internal directory, no user input in path
                             with open(os.path.join(path, fname)) as f:
                                 _get_chart_name(f.read())
                         except Exception as e:
@@ -239,6 +242,7 @@ def get_charts_for_country(country, with_standard=False):
                 fname1 = frappe.as_unicode(fname1)
                 if (fname1.startswith(country_code) or fname1.startswith(country)) and fname1.endswith(".json"):
                     try:
+                        # nosemgrep: frappe-security-file-traversal -- fname1 comes from os.listdir of an app-internal directory, no user input in path
                         with open(os.path.join(custom_charts_path, fname1)) as f1:
                             _get_chart_name(f1.read())
                     except Exception as e:

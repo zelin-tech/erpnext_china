@@ -100,6 +100,7 @@ def set_system_settings():
 def change_field_property():
     try:
         file_path = os.path.join(os.path.dirname(__file__), 'field_property.csv')
+        # nosemgrep: frappe-security-file-traversal -- static file bundled with the app, no user input in path
         with open(file_path, 'r', encoding='utf-8') as in_file:
                 data = list(csv.reader(in_file))
         for (doctype, field_name, prop, value) in data:

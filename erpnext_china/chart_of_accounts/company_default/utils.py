@@ -14,6 +14,7 @@ def set_default_accounts(company_name):
     try:
         values = {}
         file_path = os.path.join(os.path.dirname(__file__), 'default_accounts.csv')
+        # nosemgrep: frappe-security-file-traversal -- static file bundled with the app, no user input in path
         with open(file_path, 'r', encoding='utf-8') as in_file:
             data = list(csv.reader(in_file))
 
@@ -40,6 +41,7 @@ def set_default_accounts(company_name):
 def setup_tax_template(company_name):
     try:
         file_path = os.path.join(os.path.dirname(__file__), 'tax_template.json')
+        # nosemgrep: frappe-security-file-traversal -- static file bundled with the app, no user input in path
         with open(file_path, 'r', encoding='utf-8') as json_file:
             tax_data = json.load(json_file)    
     
@@ -62,6 +64,7 @@ def setup_tax_rule(company_name):
     try:
         abbr = frappe.db.get_value('Company', company_name, 'abbr')
         file_path = os.path.join(os.path.dirname(__file__), 'tax_rule.csv')
+        # nosemgrep: frappe-security-file-traversal -- static file bundled with the app, no user input in path
         with open(file_path, 'r', encoding='utf-8') as in_file:
             data = list(csv.reader(in_file))
         if data: data = data[1:]
