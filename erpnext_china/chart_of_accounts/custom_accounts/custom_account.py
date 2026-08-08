@@ -10,8 +10,9 @@ ones bundled with erpnext; standard templates are delegated to the original
 implementation untouched.
 
 Each override keeps the signature of the method it replaces, so the framework
-can swap them in without adapting callers. Verified against erpnext v16 /
-frappe v16:
+can swap them in without adapting callers. The signatures below are identical
+in v15 and v16 of both frappe and erpnext, matching the `frappe>=15,<17` range
+this app declares:
 
     get_chart(chart_template, existing_company=None)
         <- erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_chart
