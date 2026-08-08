@@ -27,6 +27,8 @@ doctype_js = {
 	"Sales Invoice" : "public/js/sales_invoice.js",
 }
 
+# All four overrides live in custom_account.py and keep the signature of the
+# method they replace; see the module docstring there for the parity notes.
 override_whitelisted_methods = {
     "erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": 
          "erpnext_china.chart_of_accounts.custom_accounts.custom_account.get_charts_for_country",
