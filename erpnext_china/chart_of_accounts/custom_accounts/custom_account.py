@@ -1,6 +1,31 @@
 # Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
+"""Chart of Accounts overrides for China.
+
+The functions below back the `override_whitelisted_methods` entries in
+`erpnext_china/hooks.py`. They exist so the Chinese charts shipped in
+`erpnext_china/chart_of_accounts/custom_accounts/` are offered alongside the
+ones bundled with erpnext; standard templates are delegated to the original
+implementation untouched.
+
+Each override keeps the signature of the method it replaces, so the framework
+can swap them in without adapting callers. The signatures below are identical
+in v15 and v16 of both frappe and erpnext, matching the `frappe>=15,<17` range
+this app declares:
+
+    get_chart(chart_template, existing_company=None)
+        <- erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_chart
+    get_charts_for_country(country, with_standard=False)
+        <- erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country
+    get_coa(doctype, parent, is_root=None, chart=None)
+        <- erpnext.accounts.utils.get_coa
+    get_all_nodes(doctype, label, parent, tree_method, **filters)
+        <- frappe.desk.treeview.get_all_nodes
+
+When upgrading frappe/erpnext, re-check those four signatures before release.
+"""
+
 import json
 import os
 
@@ -153,8 +178,7 @@ def get_chart(chart_template, existing_company=None):
     if existing_company:
         return get_account_tree_from_existing_company(existing_company)
     else:
-        bench_dir = frappe.utils.get_bench_path()
-        erpnext_charts_path = os.path.join(bench_dir, "apps", "erpnext", "erpnext", "accounts", "doctype", "account", "chart_of_accounts")
+        erpnext_charts_path = frappe.get_app_path("erpnext", "accounts", "doctype", "account", "chart_of_accounts")
 
         folders = ("verified",)
         if frappe.local.flags.allow_unverified_charts:
@@ -165,6 +189,7 @@ def get_chart(chart_template, existing_company=None):
                 fname = frappe.as_unicode(fname)
                 if fname.endswith(".json"):
                     try:
+                        # nosemgrep: frappe-security-file-traversal -- fname comes from os.listdir of an app-internal directory, no user input in path
                         with open(os.path.join(path, fname)) as f:
                             chart = f.read()
                             if chart and json.loads(chart).get("name") == chart_template:
@@ -172,7 +197,7 @@ def get_chart(chart_template, existing_company=None):
                     except Exception as e:
                         frappe.log_error(f"Error reading chart file in get_chart: {e}", title="Chart File Read Error")
 
-        custom_path = os.path.join(bench_dir, "apps", "erpnext_china", "erpnext_china", "chart_of_accounts", "custom_accounts")
+        custom_path = frappe.get_app_path("erpnext_china", "chart_of_accounts", "custom_accounts")
         custom_folders = ("chart_of_accounts", "custom_of_accounts")
         for custom_folder in custom_folders:
             custom_charts_path = os.path.join(custom_path, custom_folder)
@@ -181,6 +206,7 @@ def get_chart(chart_template, existing_company=None):
                     fname1 = frappe.as_unicode(fname1)
                     if fname1.endswith(".json"):
                         try:
+                            # nosemgrep: frappe-security-file-traversal -- fname1 comes from os.listdir of an app-internal directory, no user input in path
                             with open(os.path.join(custom_charts_path, fname1)) as f1:
                                 chart1 = f1.read()
                                 if chart1 and json.loads(chart1).get("name") == chart_template:
@@ -194,7 +220,6 @@ def get_chart(chart_template, existing_company=None):
 @frappe.whitelist()
 def get_charts_for_country(country, with_standard=False):
     charts = []
-    bench_dir = frappe.utils.get_bench_path()
 
     def _get_chart_name(content):
         if content:
@@ -213,7 +238,7 @@ def get_charts_for_country(country, with_standard=False):
         if frappe.local.flags.allow_unverified_charts:
             folders = ("verified", "unverified")
 
-        erpnext_charts_path = os.path.join(bench_dir, "apps", "erpnext", "erpnext", "accounts", "doctype", "account", "chart_of_accounts")
+        erpnext_charts_path = frappe.get_app_path("erpnext", "accounts", "doctype", "account", "chart_of_accounts")
         for folder in folders:
             path = os.path.join(erpnext_charts_path, folder)
             if os.path.exists(path):
@@ -221,6 +246,7 @@ def get_charts_for_country(country, with_standard=False):
                     fname = frappe.as_unicode(fname)
                     if (fname.startswith(country_code) or fname.startswith(country)) and fname.endswith(".json"):
                         try:
+                            # nosemgrep: frappe-security-file-traversal -- fname comes from os.listdir of an app-internal directory, no user input in path
                             with open(os.path.join(path, fname)) as f:
                                 _get_chart_name(f.read())
                         except Exception as e:
@@ -230,15 +256,17 @@ def get_charts_for_country(country, with_standard=False):
     if len(charts) != 1 or with_standard:
         charts += ["Standard", "Standard with Numbers"]
 
-    custom_path = os.path.join(bench_dir, "apps", "erpnext_china", "erpnext_china", "chart_of_accounts", "custom_accounts")
+    custom_path = frappe.get_app_path("erpnext_china", "chart_of_accounts", "custom_accounts")
     custom_folders = ("chart_of_accounts", "custom_of_accounts")
     for custom_folder in custom_folders:
         custom_charts_path = os.path.join(custom_path, custom_folder)
         if os.path.exists(custom_charts_path):
             for fname1 in os.listdir(custom_charts_path):
                 fname1 = frappe.as_unicode(fname1)
-                if (fname1.startswith(country_code) or fname1.startswith(country)) and fname1.endswith(".json"):
+                matches_country = fname1.startswith(country) or (country_code and fname1.startswith(country_code))
+                if matches_country and fname1.endswith(".json"):
                     try:
+                        # nosemgrep: frappe-security-file-traversal -- fname1 comes from os.listdir of an app-internal directory, no user input in path
                         with open(os.path.join(custom_charts_path, fname1)) as f1:
                             _get_chart_name(f1.read())
                     except Exception as e:
@@ -247,7 +275,7 @@ def get_charts_for_country(country, with_standard=False):
     return charts
 
 @frappe.whitelist()
-def get_all_nodes(doctype, label, parent, tree_method, **filters):
+def get_all_nodes(doctype: str, label: str, parent: str, tree_method: str | None, **filters):
     from frappe.desk.treeview import get_all_nodes as original_get_all_nodes
 
     tree_method = frappe.override_whitelisted_method(tree_method)

@@ -88,7 +88,7 @@ def get_acc_nums(filters, data):
   acc_nums = []
   for d in data:
     if d.calc_type and d.calc_sources and d.calc_type == "Closing Balance":       
-      splitted_nums = list(filter(None, d.calc_sources.split(",")))
+      splitted_nums = [s for s in d.calc_sources.split(",") if s]
       #globals().update(locals())
       d.acc_nums = [f[1:] if f and f[0] == '-' else f for f in splitted_nums]
       d.minus_factor = [-1 if f and f[0] == '-' else 1 for f in splitted_nums]
@@ -167,7 +167,7 @@ def get_data(data, filters):
 
   for d in data:
     if d.calc_type and d.calc_sources and d.calc_type == "Calculate Rows":
-      splitted_rows = list(filter(None, d.calc_sources.split(",")))
+      splitted_rows = [s for s in d.calc_sources.split(",") if s]
       #globals().update(locals())
       d.acc_nums = [f[1:] if f and f[0] == '-' else f for f in splitted_rows]
       d.minus_factor = [-1 if f and f[0] == '-' else 1 for f in splitted_rows]      

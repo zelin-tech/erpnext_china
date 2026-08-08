@@ -60,21 +60,24 @@ class BalanceSheetDoubleColumns():
       frappe.msgprint(_("请先进行资产负债表（两栏式）{0}设置").format(form_link))
       return    
 
-    self.data = list(map(lambda d: frappe._dict({
-        "idx": d.idx,
-        "lft_empty": d.lft_empty,
-        "lft_bold": d.lft_bold,
-        "lft_name": d.lft_name,
-        "lft_indent": d.lft_indent,
-        "lft_calc_type": d.lft_calc_type,
-        "lft_calc_sources": d.lft_calc_sources,
-        "rgt_empty": d.rgt_empty,
-        "rgt_bold": d.rgt_bold,
-        "rgt_name": d.rgt_name,
-        "rgt_indent": d.rgt_indent,
-        "rgt_calc_type": d.rgt_calc_type,
-        "rgt_calc_sources": d.rgt_calc_sources,
-    }), settings.items))
+    self.data = [
+        frappe._dict({
+            "idx": d.idx,
+            "lft_empty": d.lft_empty,
+            "lft_bold": d.lft_bold,
+            "lft_name": d.lft_name,
+            "lft_indent": d.lft_indent,
+            "lft_calc_type": d.lft_calc_type,
+            "lft_calc_sources": d.lft_calc_sources,
+            "rgt_empty": d.rgt_empty,
+            "rgt_bold": d.rgt_bold,
+            "rgt_name": d.rgt_name,
+            "rgt_indent": d.rgt_indent,
+            "rgt_calc_type": d.rgt_calc_type,
+            "rgt_calc_sources": d.rgt_calc_sources,
+        })
+        for d in settings.items
+    ]
 
     self.get_data()
 
@@ -239,8 +242,7 @@ class BalanceSheetDoubleColumns():
         }
         if not d[prefix + "empty"] and d[prefix + "calc_type"] and d[prefix + "calc_sources"] and d[prefix + "calc_type"] == "Closing Balance":
           d[prefix + "opening_balance"] = d[prefix + "closing_balance"] = 0.0
-          d[prefix + "calc_sources"] = list(filter(None,
-                                            d[prefix + "calc_sources"].split(",")))
+          d[prefix + "calc_sources"] = [s for s in d[prefix + "calc_sources"].split(",") if s]
           d[prefix + "accounts"] = []
           for account_number in d[prefix + "calc_sources"]:
             minus = False
@@ -270,8 +272,7 @@ class BalanceSheetDoubleColumns():
       for prefix in ["lft_", "rgt_"]:
         if not d[prefix + "empty"] and d[prefix + "calc_type"] and d[prefix + "calc_sources"] and d[prefix + "calc_type"] == "Calculate Rows":
           d[prefix + "opening_balance"] = d[prefix + "closing_balance"] = 0.0
-          d[prefix + "calc_sources"] = list(filter(None,
-                                            d[prefix + "calc_sources"].split(",")))
+          d[prefix + "calc_sources"] = [s for s in d[prefix + "calc_sources"].split(",") if s]
           d[prefix + "rows"] = []
           for idx in d[prefix + "calc_sources"]:
             minus = False
@@ -358,21 +359,24 @@ class BalanceSheetSingleColumn(BalanceSheetDoubleColumns):
 
     settings = frappe.get_single("Balance Sheet Settings")
 
-    self.data = list(map(lambda d: frappe._dict({
-        "idx": d.idx,
-        "lft_empty": d.lft_empty,
-        "lft_bold": d.lft_bold,
-        "lft_name": d.lft_name,
-        "lft_indent": d.lft_indent,
-        "lft_calc_type": d.lft_calc_type,
-        "lft_calc_sources": d.lft_calc_sources,
-        "rgt_empty": d.rgt_empty,
-        "rgt_bold": d.rgt_bold,
-        "rgt_name": d.rgt_name,
-        "rgt_indent": d.rgt_indent,
-        "rgt_calc_type": d.rgt_calc_type,
-        "rgt_calc_sources": d.rgt_calc_sources,
-    }), settings.items))
+    self.data = [
+        frappe._dict({
+            "idx": d.idx,
+            "lft_empty": d.lft_empty,
+            "lft_bold": d.lft_bold,
+            "lft_name": d.lft_name,
+            "lft_indent": d.lft_indent,
+            "lft_calc_type": d.lft_calc_type,
+            "lft_calc_sources": d.lft_calc_sources,
+            "rgt_empty": d.rgt_empty,
+            "rgt_bold": d.rgt_bold,
+            "rgt_name": d.rgt_name,
+            "rgt_indent": d.rgt_indent,
+            "rgt_calc_type": d.rgt_calc_type,
+            "rgt_calc_sources": d.rgt_calc_sources,
+        })
+        for d in settings.items
+    ]
 
     self.get_data()
 
@@ -438,8 +442,7 @@ class BalanceSheetSingleColumn(BalanceSheetDoubleColumns):
           if not d[prefix + "empty"] and d[prefix + "calc_type"] and d[prefix + "calc_sources"] and d[prefix + "calc_type"] == "Closing Balance":
             d[prefix + key] = 0.0
             if not isinstance(d[prefix + "calc_sources"], list):
-              d[prefix + "calc_sources"] = list(filter(None,
-                                                d[prefix + "calc_sources"].split(",")))
+              d[prefix + "calc_sources"] = [s for s in d[prefix + "calc_sources"].split(",") if s]
             d[prefix + "accounts"] = []
             for account_number in d[prefix + "calc_sources"]:
               minus = False
@@ -466,8 +469,7 @@ class BalanceSheetSingleColumn(BalanceSheetDoubleColumns):
           if not d[prefix + "empty"] and d[prefix + "calc_type"] and d[prefix + "calc_sources"] and d[prefix + "calc_type"] == "Calculate Rows":
             d[prefix + key] = d[prefix + key] = 0.0
             if not isinstance(d[prefix + "calc_sources"], list):
-              d[prefix + "calc_sources"] = list(filter(None,
-                                                d[prefix + "calc_sources"].split(",")))
+              d[prefix + "calc_sources"] = [s for s in d[prefix + "calc_sources"].split(",") if s]
             d[prefix + "rows"] = []
             for idx in d[prefix + "calc_sources"]:
               minus = False
