@@ -1,3 +1,5 @@
+from frappe import __version__ as frappe_version
+
 from . import __version__ as app_version
 
 app_name = "erpnext_china"
@@ -11,15 +13,20 @@ after_install = "erpnext_china.setup.install.after_install"
 
 setup_wizard_requires = "assets/erpnext_china/js/setup_wizard.js"
 
-app_include_icons = [
-    "/assets/erpnext_china/icons/account_report.svg",
-	"/assets/erpnext_china/icons/cn_account_report.svg"
+_icons = [
+    "erpnext_china/icons/account_report.svg",
+	"erpnext_china/icons/cn_account_report.svg"
 ]
 
-web_include_icons = [
-    "/assets/erpnext_china/icons/account_report.svg",
-	"/assets/erpnext_china/icons/cn_account_report.svg"
-]
+# v15 renders these as `/assets/{{ path }}` and so wants the bare path, while
+# v16 passes the value through abs_url() and so wants the full `/assets/...`
+# one. This app supports frappe >=15,<17, so pick the form the host expects.
+if int(frappe_version.split(".")[0]) >= 16:
+    app_include_icons = [f"/assets/{icon}" for icon in _icons]
+    # web_include_icons is a v16 hook; ignored on v15.
+    web_include_icons = list(app_include_icons)
+else:
+    app_include_icons = list(_icons)
 
 doctype_js = {
      "Purchase Order" : "public/js/purchase_order.js",
